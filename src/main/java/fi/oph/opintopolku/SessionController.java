@@ -11,7 +11,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.cas.authentication.CasAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.text.DateFormat;
@@ -29,6 +31,19 @@ public class SessionController {
 
     private static final String HETU_REGEX = "^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d\\+|\\d\\d-|[01]\\dA)\\d{3}[\\dABCDEFHJKLMNPRSTUVWXY]$";
 
+    @RequestMapping(value = "/authenticate")
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping
+    public RedirectView authenticate() {
+        return new RedirectView("/oma-opintopolku/");
+    }
+
+    private static boolean isUsingValtuudet(Map<String, Object> attributes) {
+        String impersonatorHetu = (String) attributes.getOrDefault("impersonatorNationalIdentificationNumber", "");
+        String impersonatorName = (String) attributes.getOrDefault("impersonatorDisplayName", "");
+        return !impersonatorHetu.isEmpty() || !impersonatorName.isEmpty();
+    }
+
     @RequestMapping(value = "/session")
     @PreAuthorize("isAuthenticated()")
     @GetMapping
@@ -41,19 +56,6 @@ public class SessionController {
         val user = createUser(attributes);
         logger.info("Returning user {}", user.toString());
         return user;
-    }
-
-    @RequestMapping(value = "/authenticate")
-    @PreAuthorize("isAuthenticated()")
-    @GetMapping
-    public RedirectView authenticate() {
-        return new RedirectView("/oma-opintopolku/");
-    }
-
-    private static boolean isUsingValtuudet(Map<String, Object> attributes) {
-        String impersonatorHetu = (String) attributes.getOrDefault("impersonatorNationalIdentificationNumber", "");
-        String impersonatorName = (String) attributes.getOrDefault("impersonatorDisplayName", "");
-        return !impersonatorHetu.isEmpty() || !impersonatorName.isEmpty();
     }
 
     private static User createUser(Map<String, Object> attributes) {

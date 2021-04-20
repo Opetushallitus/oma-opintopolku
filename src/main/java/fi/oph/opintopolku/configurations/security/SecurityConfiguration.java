@@ -3,7 +3,6 @@ package fi.oph.opintopolku.configurations.security;
 import fi.oph.opintopolku.configurations.processor.OmaopintopolkuCorsProcessor;
 import fi.oph.opintopolku.configurations.properties.CasOppijaProperties;
 import fi.oph.opintopolku.services.impl.OmaopintopolkuUserDetailsServiceImpl;
-import fi.vm.sade.java_utils.security.OpintopolkuCasAuthenticationFilter;
 import fi.vm.sade.properties.OphProperties;
 import org.jasig.cas.client.session.SessionMappingStorage;
 import org.jasig.cas.client.session.SingleSignOutFilter;
@@ -35,7 +34,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private OphProperties ophProperties;
     private Environment environment;
     private SessionMappingStorage sessionMappingStorage;
-
 
     @Autowired
     public SecurityConfiguration(CasOppijaProperties casOppijaProperties, OphProperties ophProperties, Environment environment,
@@ -83,6 +81,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         OmaOpintopolkuCasAuthenticationFilter casAuthenticationFilter = new OmaOpintopolkuCasAuthenticationFilter(serviceProperties());
         casAuthenticationFilter.setAuthenticationManager(authenticationManager());
         casAuthenticationFilter.setFilterProcessesUrl("/j_spring_cas_security_check");
+        casAuthenticationFilter.setAuthenticationSuccessHandler(omaOpintopolkuAuthenticationSuccessHandler());
         return casAuthenticationFilter;
     }
 
@@ -104,11 +103,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     // CAS entry point
     //
     @Bean
-    public OmaopintopolkuCasAuthenticationEntryPoint omaOpintopolkuCasAuthenticationEntryPoint() {
-        OmaopintopolkuCasAuthenticationEntryPoint omaOpintopolkuCasAuthenticationEntryPoint = new OmaopintopolkuCasAuthenticationEntryPoint();
+    public OmaOpintopolkuCasAuthenticationEntryPoint omaOpintopolkuCasAuthenticationEntryPoint() {
+        OmaOpintopolkuCasAuthenticationEntryPoint omaOpintopolkuCasAuthenticationEntryPoint = new OmaOpintopolkuCasAuthenticationEntryPoint();
         omaOpintopolkuCasAuthenticationEntryPoint.setLoginUrl(ophProperties.url("cas-oppija.login"));
         omaOpintopolkuCasAuthenticationEntryPoint.setServiceProperties(serviceProperties());
         return omaOpintopolkuCasAuthenticationEntryPoint;
+    }
+
+    @Bean
+    public OmaOpintopolkuAuthenticationSuccessHandler omaOpintopolkuAuthenticationSuccessHandler() {
+        OmaOpintopolkuAuthenticationSuccessHandler omaOpintopolkuAuthenticationSuccessHandler = new OmaOpintopolkuAuthenticationSuccessHandler();
+        return omaOpintopolkuAuthenticationSuccessHandler;
     }
 
     @Override

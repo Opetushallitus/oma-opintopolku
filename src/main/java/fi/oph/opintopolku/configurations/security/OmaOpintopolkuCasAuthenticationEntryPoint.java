@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class OmaopintopolkuCasAuthenticationEntryPoint extends CasAuthenticationEntryPoint {
+public class OmaOpintopolkuCasAuthenticationEntryPoint extends CasAuthenticationEntryPoint {
     private final static String valtuudet_enabled = ConfigEnums.VALTUUDET_ENABLED.value();
-    private static final Logger logger = LoggerFactory.getLogger(OmaopintopolkuCasAuthenticationEntryPoint.class);
+    private static final Logger logger = LoggerFactory.getLogger(OmaOpintopolkuCasAuthenticationEntryPoint.class);
 
     @Override
     protected String createServiceUrl(final HttpServletRequest request,
