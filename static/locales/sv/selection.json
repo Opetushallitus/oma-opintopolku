@@ -22,7 +22,18 @@
     "link": "Fortsätt till studierna",
     "linkLoggedOut": "Fortsätt till studierna (kräver identifiering)",
     "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
-
+  },
+  "valpas": {
+    "title": "Uppföljnings- och tillsynstjänsten Valpas",
+    "subtitle": "Granska uppgifter om fullgörandet av läroplikten med hjälp av uppföljnings- och tillsynstjänsten. ",
+    "icon": "Ikoni kahdesta paperiarkista osin limittäin",
+    "label": "Du kan granska:",
+    "item1": "dina egna uppgifter som gäller fullgörandet av läroplikten",
+    "item2": "uppgifter om fullgörandet av läroplikten som gäller ett barn som du är vårdnadshavare till",
+    "item3": "uppgifter som varit i kraft 2021 och som berör läropliktens giltighetstid, rätten till avgiftsfri utbildning och fullgörandet av läroplikten",
+    "link": "Gå till Valpas-tjänsten",
+    "linkLoggedOut": "Gå till Valpas-tjänsten (kräver identifiering)",
+    "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
   },
   "varda": {
     "title": "Informationsresursen inom småbarnspedagogiken Varda",
@@ -41,16 +52,16 @@
     "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
   },
   "ehoks": {
-	  "title": "ePUK - Den personliga utvecklingsplanen",
-	  "subtitle": "ePUK är en tjänst för planering av professionella studier. Den personliga utvecklingsplanen för kunnandet är ett verktyg för studerande, lärare och handledare i läroanstalter och på arbetsplatser.",
-	  "icon": "Ikoni kahdesta paperiarkista osin limittäin",
-	  "label": "Tjänsten är tillgänglig för:",
-	  "item1": "studerande i yrkesutbildning",
-	  "item2": "läroanstaltens representanter",
-	  "item3": "arbetslivsaktörer",
-	  "link": "Fortsätt till ePUK-tjänsten",
-	  "linkLoggedOut": "Fortsätt till ePUK-tjänsten",
-	  "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
+    "title": "ePUK - Den personliga utvecklingsplanen",
+    "subtitle": "ePUK är en tjänst för planering av professionella studier. Den personliga utvecklingsplanen för kunnandet är ett verktyg för studerande, lärare och handledare i läroanstalter och på arbetsplatser.",
+    "icon": "Ikoni kahdesta paperiarkista osin limittäin",
+    "label": "Tjänsten är tillgänglig för:",
+    "item1": "studerande i yrkesutbildning",
+    "item2": "läroanstaltens representanter",
+    "item3": "arbetslivsaktörer",
+    "link": "Fortsätt till ePUK-tjänsten",
+    "linkLoggedOut": "Fortsätt till ePUK-tjänsten",
+    "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
   },
   "tietojenikaytto": {
     "title": "Hur används mina uppgifter?"

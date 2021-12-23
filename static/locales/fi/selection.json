@@ -23,6 +23,18 @@
     "linkLoggedOut": "Siirry opintosuorituksiin (vaatii tunnistautumisen)",
     "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
   },
+  "valpas": {
+    "title": "Oppivelvollisuuden seuranta- ja valvontapalvelu Valpas",
+    "subtitle": "Tarkastele oppivelvollisuuden seuranta- ja valvontapalvelun tietoja oppivelvollisuuden suorittamisesta.",
+    "icon": "Ikoni kahdesta paperiarkista osin limittäin",
+    "label": "Voit tarkastella:",
+    "item1": "omia oppivelvollisuuden suorittamiseen liittyviä tietoja",
+    "item2": "huollettavasi oppivelvollisuuden suorittamiseen liittyviä tietoja",
+    "item3": "tietoja vuodesta 2021 alkaen oppivelvollisuuden voimassaolosta, oikeudesta maksuttomaan koulutukseen ja oppivelvollisuuden suorittamisesta",
+    "link": "Siirry Valpas-palveluun",
+    "linkLoggedOut": "Siirry Valpas-palveluun (vaatii tunnistautumisen)",
+    "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
+  },
   "varda": {
     "title": "Varhaiskasvatuksen tietovaranto Varda",
     "subtitle": "Katsele kansalliseen varhaiskasvatuksen tietovarantoon tallennettuja tietoja.",
@@ -40,16 +52,16 @@
     "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
   },
   "ehoks": {
-	"title": "eHOKS - henkilökohtaisen osaamisen kehittämissuunnitelma",
-	"subtitle": "eHOKS on palvelu ammatillisten opintojen suunnitteluun. Henkilökohtainen osaamisen kehittämissuunnitelma on käytännön työväline opiskelijalle, opettajille ja ohjaajille ammatillisissa oppilaitoksessa ja työpaikoilla.",
-	"icon": "Ikoni kahdesta paperiarkista osin limittäin",
-	"label": "Palvelu on saatavilla:",
-	"item1": "ammatillisessa koulutuksessa opiskeleville",
-	"item2": "koulutuksenjärjestäjille",
-	"item3": "työelämän toimijoille",
-	"link": "Siirry eHOKS-palveluun",
-	"linkLoggedOut": "Siirry eHOKS-palveluun",
-	"linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
+    "title": "eHOKS - henkilökohtaisen osaamisen kehittämissuunnitelma",
+    "subtitle": "eHOKS on palvelu ammatillisten opintojen suunnitteluun. Henkilökohtainen osaamisen kehittämissuunnitelma on käytännön työväline opiskelijalle, opettajille ja ohjaajille ammatillisissa oppilaitoksessa ja työpaikoilla.",
+    "icon": "Ikoni kahdesta paperiarkista osin limittäin",
+    "label": "Palvelu on saatavilla:",
+    "item1": "ammatillisessa koulutuksessa opiskeleville",
+    "item2": "koulutuksenjärjestäjille",
+    "item3": "työelämän toimijoille",
+    "link": "Siirry eHOKS-palveluun",
+    "linkLoggedOut": "Siirry eHOKS-palveluun",
+    "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
   },
   "tietojenikaytto": {
     "title": "Tietojeni käyttö"
