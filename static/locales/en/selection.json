@@ -23,6 +23,18 @@
     "linkLoggedOut": "Proceed to studies (requires identification)",
     "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
   },
+  "valpas": {
+    "title": "Valpas Monitoring and Tracking Service for Compulsory Education",
+    "subtitle": "View your own details of completing compulsory education or the details of your dependent in the monitoring and tracking service. ",
+    "icon": "Ikoni kahdesta paperiarkista osin limittäin",
+    "label": "You can view:",
+    "item1": "Your own details related to completing compulsory education",
+    "item2": "Your dependent’s details related to completing compulsory education",
+    "item3": "Starting from 2021, information on the validity of compulsory education, the right to free-of-charge education and completing compulsory education",
+    "link": "Proceed to the Valpas service",
+    "linkLoggedOut": "Proceed to the Valpas service (requires identification)",
+    "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
+  },
   "varda": {
     "title": "The national data warehouse for early childhood education and care Varda (Only available in Finnish/Swedish)",
     "subtitle": "View information stored in Varda, the national data warehouse on early childhood education and care.",
@@ -40,16 +52,16 @@
     "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
   },
   "ehoks": {
-	  "title": "eHOKS - Personal Competence Development Plan (Only available in Finnish/Swedish)",
-	  "subtitle": "eHOKS is a service for planning professional studies. The Personal Competence Development Plan is a practical tool for students, teachers in vocational schools and tutors in  workplaces.",
-	  "icon": "Ikoni kahdesta paperiarkista osin limittäin",
-	  "label": "The service is available for:",
-	  "item1": "students in vocational training",
-	  "item2": "vocational school staff",
-	  "item3": "actors in the working life",
-	  "link": "Proceed to eHOKS service",
-	  "linkLoggedOut": "Proceed to eHOKS service",
-	  "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
+    "title": "eHOKS - Personal Competence Development Plan (Only available in Finnish/Swedish)",
+    "subtitle": "eHOKS is a service for planning professional studies. The Personal Competence Development Plan is a practical tool for students, teachers in vocational schools and tutors in  workplaces.",
+    "icon": "Ikoni kahdesta paperiarkista osin limittäin",
+    "label": "The service is available for:",
+    "item1": "students in vocational training",
+    "item2": "vocational school staff",
+    "item3": "actors in the working life",
+    "link": "Proceed to eHOKS service",
+    "linkLoggedOut": "Proceed to eHOKS service",
+    "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
   },
   "tietojenikaytto": {
     "title": "How is my data used?"
