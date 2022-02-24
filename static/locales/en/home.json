@@ -4,5 +4,6 @@
   "login": {
     "header": "Welcome to My Studyinfo!",
     "info": "My Studyinfo provides services for identified and logged in users. The services available are listed below. You can access these services in My Studyinfo only by logging in via Suomi.fi e-Identification with Finnish online banking credentials (e-identification must be enabled), a Finnish electronic ID-card or mobile certificate. Identification methods for foreigners in Suomi.fi e-Identification are not currently supported."
-  }
+  },
+  "oppijanumero": "National learner ID:"
 }

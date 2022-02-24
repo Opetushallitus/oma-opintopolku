@@ -4,5 +4,6 @@
   "login": {
     "header": "Tervetuloa Oma Opintopolkuun!",
     "info": "Oma Opintopolussa voit tarkastella omia tietojasi sekä asioida Opetushallituksen eri palveluissa. Näet kunkin palvelun kohdalla, mitä voit kyseisessä palvelussa tehdä. Päästäksesi palveluihin, joudut kirjautumaan sisään. Kirjautumisessa käytetään suomi.fi-tunnistautumista, joten tarvitset pankkitunnukset, mobiilivarmenteen tai sirullisen henkilökortin. Huom! Ulkomaalaisen tunnistustavat eivät ole tuettuja."
-  }
+  },
+  "oppijanumero": "Oppijanumero:"
 }
