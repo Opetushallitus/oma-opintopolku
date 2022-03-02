@@ -4,5 +4,6 @@
   "login": {
     "header": "Välkommen till Min Studieinfo!",
     "info": "I Min Studieinfo kan du granska din information och använda Utbildningsstyrelsens e-tjänster. Under önskad tjänst får du information om vad tjänsten erbjuder. Du måste logga in för att kunna använda tjänsterna. För att logga in måste du identifiera dig med Suomi.fi-identifikation, d.v.s. med nätbankskoder, mobilcertifikat eller elektroniskt id-kort. Identifieringssätt för utlänningar i Suomi.fi-identifikation stöds för närvarande inte."
-  }
+  },
+  "oppijanumero": "Studentnummer:"
 }

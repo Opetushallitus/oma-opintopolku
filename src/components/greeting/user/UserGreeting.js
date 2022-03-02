@@ -18,6 +18,9 @@ const UserGreeting = ({ user }) => (
           <span className={styles.name}>{ user.name }</span>
           <span className={styles.birthday}>{user.birthDay}</span>
         </p>
+        <p className={styles.oppijanumero}>
+          <span>{t('oppijanumero')} {user.personOid}</span>
+        </p>
       </div>
     )}
   </I18n>
