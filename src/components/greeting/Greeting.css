@@ -35,6 +35,16 @@
   margin: 0;
 }
 
+:local(.notification) {
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  max-width: 100%;
+  padding: 20px;
+  color: red;
+  border: black;
+  border-style: dotted;
+}
+
 :local(.identity) {
   margin-top: 40px;
   font-size: 20px;

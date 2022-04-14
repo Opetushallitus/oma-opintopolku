@@ -12,6 +12,7 @@ const UserGreeting = ({ user }) => (
   <I18n ns="home">
     {t => (
       <div className={styles['greeting-container']}>
+        <p className={styles.notification}>{t('notification')}</p>
         <h1 className={styles.heading}>{t('greeting')}</h1>
         <p className={styles.subtitle}>{t('description')}</p>
         <p className={styles.identity}>

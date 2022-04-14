@@ -12,6 +12,7 @@ const GuestGreeting = () => (
   <I18n ns="home">
     {t => (
       <div className={styles['greeting-container-space-below']}>
+        <p className={styles.notification}>{t('notification')}</p>
         <h1 className={styles['guest-header']}>{t('login.header')}</h1>
         <p className={styles['guest-greeting']}>{t('login.info')}</p>
       </div>
