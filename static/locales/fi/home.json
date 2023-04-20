@@ -1,6 +1,6 @@
 {
   "description": "Olet kirjautunut sisään ja voit tarkastella omia opintosuorituksia vuosien varrelta, hakemuksiasi eri oppilaitoksiin, sekä varhaiskasvatuksen tietovarannossa olevia tietoja.",
-  "notification": "Opintopolussa käyttökatko keskiviikkona 20.4. klo 16-18 tietokantapäivityksen takia. Käyttökatkon aikana hakemusten näkyvyydessä ja muokkaamisessa on häiriöitä. Pahoittelemme käyttökatkosta johtuvaa haittaa.",
+  "notification": "KOSKI-palvelun testiympäristön vaatimien huoltotoimenpiteiden vuoksi palvelussa on huoltokatko keskiviikkona 3.5.2023 klo 17-20. KOSKI-palvelun testiympäristö TestiOpintopolussa on tuon ajan poissa käytöstä.",
   "greeting": "Tervetuloa!",
   "login": {
     "header": "Tervetuloa Oma Opintopolkuun!",
