@@ -1,6 +1,6 @@
 {
   "description": "Olet kirjautunut sisään ja voit tarkastella omia opintosuorituksia vuosien varrelta, hakemuksiasi eri oppilaitoksiin, sekä varhaiskasvatuksen tietovarannossa olevia tietoja.",
-  "notification": "KOSKI-palvelun testiympäristön vaatimien huoltotoimenpiteiden vuoksi palvelussa on huoltokatko keskiviikkona 3.5.2023 klo 17-20. KOSKI-palvelun testiympäristö TestiOpintopolussa on tuon ajan poissa käytöstä.",
+  "notification": "Suomi.fi-palvelujen taustapalveluissa tehdään 1.–2.5.2023 huoltotöitä. Huoltotoimenpiteet aiheuttavat muutaman 3–5 minuutin mittaisen katkon Suomi.fi-palveluihin. Katkojen aikana kirjautuminen julkisen hallinnon asiointipalveluihin ei toimi, puolesta-asiointi sähköisissä asiointipalveluissa ei hetkellisesti toimi ja puolesta-asiointi eri asiointipalveluissa voi estyä hetkellisesti. Jos palvelujen käyttäminen epäonnistuu, suosittelemme yrittämään muutaman minuutin kuluttua uudelleen. Huoltotoimenpiteet pyritään tekemään 1.5.2023 klo 21.00 – 2.5.2023 klo 5.00 välisenä aikana. Pahoittelemme katkoista aiheutuvaa haittaa.",
   "greeting": "Tervetuloa!",
   "login": {
     "header": "Tervetuloa Oma Opintopolkuun!",
