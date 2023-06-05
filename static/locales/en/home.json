@@ -1,6 +1,6 @@
 {
   "description": "You are logged in and you can view your completed studies, see your applications to Finnish Educational Institutions and see what information is stored in the national data warehouse for early childhood education and care - Varda.",
-  "notification": "The background services of Suomi.fi services will carry out maintenance work between 1 May and 2 May 2023. Maintenance measures cause a few three to five minute interruptions in Suomi.fi services.During these interruptions, logging in to the public administration e-services will not work, acting on behalf of another party in e-services does not work momentarily and acting on behalf of another party in different e-services may be temporarily prevented. If using the services fails, we recommend that you try again in a few minutes. The aim is to carry out maintenance on 1–2 May 2023 between 21:00 and 5:00. We apologise for any inconvenience caused by these interruptions.",
+  "notification": "A maintenance break in KOSKI 12 June at 17-18:30 (UTC+3/EEST). During the maintenance break, you cannot access your completed studies or see who uses your data on My Studyinfo. In addition, you cannot grant access to your study information to other service providers (e.g. HSL or Frank). We apologize for the inconvenience.",
   "greeting": "Welcome!",
   "login": {
     "header": "Welcome to My Studyinfo!",
