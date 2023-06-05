@@ -1,5 +1,6 @@
 {
   "description": "Du har loggat in och du kan granska dina tidigare studieprestationer, ansökningar till olika läroanstalter eller uppgifter som har sparats i Informationsresursen inom småbarnspedagogik (Varda).",
+  "notification": "Den 1-2 maj 2023 kommer underhållsarbeten att utföras i Suomi.fi-tjänsternas bakgrundstjänster. Underhållsarbetet orsakar några 3–5 minuters avbrott i Suomi.fi-tjänsterna. Under avbrottet att logga in på offentlig förvaltnings transaktionstjänster fungerar inte, transaktion på uppdrag av elektroniska transaktionstjänster fungerar tillfälligt inte och handel på uppdrag av olika transaktionstjänster kan tillfälligt blockeras. Om användningen av tjänsterna misslyckas rekommenderar vi att du försöker igen efter några minuter. Underhållsarbetet är avsedda att utföras mellan 1 maj 2023 kl 21:00 och 2 maj 2023 kl 5:00. Vi beklagar för besväret som orsakat av avbrotten",
   "greeting": "Välkommen!",
   "login": {
     "header": "Välkommen till Min Studieinfo!",

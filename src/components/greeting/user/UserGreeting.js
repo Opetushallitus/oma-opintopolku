@@ -8,10 +8,13 @@ function displayDate(date) {
   }
 }
 
-const UserGreeting = ({ user }) => (
+const UserGreeting = ({ user, showNotification }) => (
   <I18n ns="home">
     {t => (
       <div className={styles['greeting-container']}>
+        {showNotification && (
+          <p className={styles.notification}><div dangerouslySetInnerHTML={{__html: t('notification')}} /></p>
+        )}
         <h1 className={styles.heading}>{t('greeting')}</h1>
         <p className={styles.subtitle}>{t('description')}</p>
         <p className={styles.identity}>

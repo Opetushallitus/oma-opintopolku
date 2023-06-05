@@ -8,10 +8,13 @@ const handleLoginClick = e => {
   login()
 }
 
-const GuestGreeting = () => (
+const GuestGreeting = ({ showNotification }) => (
   <I18n ns="home">
     {t => (
       <div className={styles['greeting-container-space-below']}>
+        {showNotification && (
+          <p className={styles.notification}><div dangerouslySetInnerHTML={{__html: t('notification')}} /></p>
+        )}
         <h1 className={styles['guest-header']}>{t('login.header')}</h1>
         <p className={styles['guest-greeting']}>{t('login.info')}</p>
       </div>
