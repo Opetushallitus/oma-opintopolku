@@ -30,7 +30,7 @@ class Home extends React.Component {
   };
 
   render() {
-    const showNotification = true;
+    const showNotification = false;
     return (
     <Fragment>
       <Greeting user={this.state.user} isLoggedIn={this.state.isLoggedIn} showNotification={showNotification} />
