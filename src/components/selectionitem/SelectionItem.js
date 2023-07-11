@@ -24,9 +24,9 @@ const SelectionItem = ({isLoggedIn, disableForValtuudet, namespace, icon, link})
           <div className={styles['list-wrapper']}>
             <p>{t(namespace + '.label')}</p>
             <ul className={styles.list}>
-              <li>{t(namespace + '.item1')}</li>
-              <li>{t(namespace + '.item2')}</li>
-              <li>{t(namespace + '.item3')}</li>
+              <li dangerouslySetInnerHTML={{__html: t(namespace + '.item1')}} />
+              <li dangerouslySetInnerHTML={{__html: t(namespace + '.item2')}} />
+              <li dangerouslySetInnerHTML={{__html: t(namespace + '.item3')}} />
             </ul>
           </div>
         </div>
