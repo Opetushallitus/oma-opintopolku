@@ -16,9 +16,9 @@
     "subtitle": "Tarkastele ja jaa opintotietojasi. Jos sinulla on huollettavia, voit tarkastella myös heidän opintotietojaan.",
     "icon": "Ikoni kahdesta paperiarkista osin limittäin",
     "label": "Löytyvät tiedot:",
-    "item1": "peruskoulusta, lukiosta ja ammatillisista oppilaitoksista vuodesta 2018 alkaen",
-    "item2": "ylioppilastutkinnot vuodesta 1990 alkaen",
-    "item3": "korkeakoulusta vuodesta 1995 alkaen (tässä voi olla korkeakoulukohtaisia poikkeuksia)",
+    "item1": "esi- ja perusopetuksesta, nivelvaiheen koulutuksista, lukiokoulutuksesta ja ammatillisesta koulutuksesta, vapaan sivistystyön koulutuksesta, taiteen perusopetuksesta, Helsingin eurooppalaisen koulun järjestämästä koulutuksesta sekä Jatkuvan oppimisen ja työllisyyden palvelukeskuksen hankkimasta muusta kuin säännellystä koulutuksesta pääsääntöisesti vuodesta 2018 alkaen, mutta tässä on koulutusmuotokohtaisia poikkeuksia sen mukaan, kuin kyseisen koulutusmuodon tiedot on määrätty tallennettaviksi. Lue lisää opetuksen ja koulutuksen valtakunnalliseen tietovarantoon sekä muun kuin säännellyn koulutuksen rekisteriin tallennetuista tiedoista: <a href=\"https://www.oph.fi/fi/palvelut/koski-tietovaranto\">https://www.oph.fi/fi/palvelut/koski-tietovaranto</a>",
+    "item2": "ylioppilastutkinnot vuodesta 1990 alkaen sekä digitaaliset ylioppilastutkintodistukset vuodesta 2008 alkaen",
+    "item3": "korkeakoulutuksesta pääsääntöisesti vuodesta 1995 alkaen, mutta tässä on korkeakoulukohtaisia poikkeuksia. Lue lisää korkeakoulujen valtakunnalliseen tietovarantoon tallennetuista tiedoista: <a href=\"https://www.csc.fi/virta-koulutukselle\">https://www.csc.fi/virta-koulutukselle</a>",
     "link": "Siirry opintosuorituksiin",
     "linkLoggedOut": "Siirry opintosuorituksiin (vaatii tunnistautumisen)",
     "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
