@@ -17,7 +17,7 @@
     "icon": "Ikoni kahdesta paperiarkista osin limittäin",
     "label": "Please notice:",
     "item1": "You can view your studies and completed degrees, which have been stored in the National Registry and Data Transfer Service for Study Rights and Completed Studies, the National Registry of Matriculation Examination, the Higher Education Achievement Register and the Register of Other than regulated education obtained by the Service Center for Continuous Learning and Employment.",
-    "item2": "Learn more about which studies and degrees can be found here: <a href=\"https://opintopolku.fi/konfo/en/sivu/my-studyinfo#my-completed-studies\">https://opintopolku.fi/konfo/en/sivu/my-studyinfo#my-completed-studies</a>",
+    "item2": "<a href=\"https://opintopolku.fi/konfo/en/sivu/my-studyinfo#my-completed-studies\">Learn more about which studies and degrees can be found in this section</a>",
     "item3": "As a guardian of a minor child, you can also view information about your child's studies.",
     "link": "Proceed to studies",
     "linkLoggedOut": "Proceed to studies (requires identification)",

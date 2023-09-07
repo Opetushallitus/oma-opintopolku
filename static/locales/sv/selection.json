@@ -17,7 +17,7 @@
     "icon": "Ikoni kahdesta paperiarkista osin limittäin",
     "label": "Notera:",
     "item1": "Du kan se de studier och examina du har avlagt som har sparats i den nationella informationsresursen för undervisning och utbildning, studentexamensregistret, registret över annan än reglerad utbildning som Servicecentret för kontinuerligt lärande och sysselsättning anskaffat och högskolornas riksomfattande datalager",
-    "item2": "Läs mer om uppgifterna som finns i Mina studieprestationer: <a href=\"https://opintopolku.fi/konfo/sv/sivu/min-studieinfo#mina-studieprestationer\">https://opintopolku.fi/konfo/sv/sivu/min-studieinfo#mina-studieprestationer</a>",
+    "item2": "<a href=\"https://opintopolku.fi/konfo/sv/sivu/min-studieinfo#mina-studieprestationer\">Läs mer om uppgifterna som finns i Mina studieprestationer</a>",
     "item3": "Du kan även i egenskap av vårdnadshavare granska uppgifter om dina barns studier.",
     "link": "Fortsätt till studierna",
     "linkLoggedOut": "Fortsätt till studierna (kräver identifiering)",

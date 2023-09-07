@@ -17,7 +17,7 @@
     "icon": "Ikoni kahdesta paperiarkista osin limittäin",
     "label": "Huomioitavaa:",
     "item1": "Voit tarkastella suorittamiasi opintoja ja tutkintoja, jotka ovat tallennettu opetuksen ja koulutuksen valtakunnalliseen tietovarantoon, ylioppilastutkintorekisteriin, jatkuvan oppimisen ja työllisyyden palvelukeskuksen hankkiman muun kuin säännellyn koulutuksen rekisteriin sekä korkeakoulujen valtakunnalliseen tietovarantoon",
-    "item2": "Lue lisää siitä, mitkä tiedot löytyvät osiosta: <a href=\"https://opintopolku.fi/konfo/fi/sivu/oma-opintopolku#omat-opintosuoritukseni\">https://opintopolku.fi/konfo/fi/sivu/oma-opintopolku#omat-opintosuoritukseni</a> ",
+    "item2": "<a href=\"https://opintopolku.fi/konfo/fi/sivu/oma-opintopolku#omat-opintosuoritukseni\">Lue lisää siitä, mitkä tiedot löytyvät osiosta</a> ",
     "item3": "Jos sinulla on huollettavia, voit tarkastella myös heidän tietojaan",
     "link": "Siirry opintosuorituksiin",
     "linkLoggedOut": "Siirry opintosuorituksiin (vaatii tunnistautumisen)",
