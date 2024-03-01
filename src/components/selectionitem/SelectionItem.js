@@ -1,7 +1,10 @@
 import React from 'react';
-import { I18n} from 'react-i18next';
+import { I18n } from 'react-i18next';
 import styles from './SelectionItem.css';
 
+const tExists = (t, key) => {
+  return t(key) !== key;
+}
 const SelectionItem = ({isLoggedIn, disableForValtuudet, namespace, icon, link}) => (
   <I18n ns="selection">
     {t => (
@@ -27,6 +30,7 @@ const SelectionItem = ({isLoggedIn, disableForValtuudet, namespace, icon, link})
               <li dangerouslySetInnerHTML={{__html: t(namespace + '.item1')}} />
               <li dangerouslySetInnerHTML={{__html: t(namespace + '.item2')}} />
               <li dangerouslySetInnerHTML={{__html: t(namespace + '.item3')}} />
+              { tExists(t, namespace + '.item4') && <li dangerouslySetInnerHTML={{__html: t(namespace + '.item4')}}/> }
             </ul>
           </div>
         </div>

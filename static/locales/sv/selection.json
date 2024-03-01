@@ -5,8 +5,9 @@
     "icon": "Kirjekuorta esittävä ikoni",
     "label": "På ansökningssidan kan du:",
     "item1": "granska dina ansökningar och bearbeta dem under ansökningstiden",
-    "item2": "se dina antagningsresultat",
-    "item3": "ta emot  studieplatsen",
+    "item2": "lägga till bilagor i din ansökan inom utsatt tid",
+    "item3": "se dina antagningsresultat",
+    "item4": "ta emot  studieplatsen",
     "link": "Fortsätt till ansökningarna",
     "linkLoggedOut": "Fortsätt till ansökningarna (kräver identifiering)",
     "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
