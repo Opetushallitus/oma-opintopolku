@@ -5,8 +5,9 @@
     "icon": "Kirjekuorta esittävä ikoni",
     "label": "Hakemussivulla voit:",
     "item1": "tarkastella hakemuksiasi ja muokata niitä hakuaikana",
-    "item2": "nähdä opiskelijavalinnan tulokset",
-    "item3": "ottaa opiskelupaikan vastaan",
+    "item2": "lisätä liitteitä hakemuksellesi määräaikaan mennessä",
+    "item3": "nähdä opiskelijavalinnan tulokset",
+    "item4": "ottaa opiskelupaikan vastaan",
     "link": "Siirry hakemuksiin",
     "linkLoggedOut": "Siirry hakemuksiin (vaatii tunnistautumisen)",
     "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."

@@ -5,8 +5,9 @@
     "icon": "Kirjekuorta esittävä ikoni",
     "label": "On applications page you can:",
     "item1": "view your applications and make modifications to them during application period",
-    "item2": "see the results of student admissions",
-    "item3": "accept an offer of admission",
+    "item2": "attach documents onto your application before the deadline",
+    "item3": "see the results of student admissions",
+    "item4": "accept an offer of admission",
     "link": "Proceed to applications",
     "linkLoggedOut": "Proceed to applications (requires identification)",
     "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
