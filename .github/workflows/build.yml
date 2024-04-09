@@ -67,7 +67,7 @@ jobs:
           export ARTIFACT_NAME="oma-opintopolku"
           cp -v target/oma-opintopolku-*.jar $DOCKER_BUILD_DIR/artifact/oma-opintopolku.jar
           cp -vr src/main/resources/oph-configuration $DOCKER_BUILD_DIR/config/
-          export BASE_IMAGE="baseimage-fatjar-openjdk8:master"
+          export BASE_IMAGE="baseimage-fatjar-openjdk8:ga-288"
           ./ci-tools/common/pull-image.sh
           ./ci-tools/github-build/build-fatjar.sh $ARTIFACT_NAME
           ./ci-tools/github-build/upload-image.sh $ARTIFACT_NAME
