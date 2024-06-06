@@ -1,6 +1,6 @@
 {
   "description": "You are logged in and you can view your completed studies, see your applications to Finnish Educational Institutions and see what information is stored in the national data warehouse for early childhood education and care - Varda.",
-  "notification": "A maintenance break in KOSKI 12 June at 17-18:30 (UTC+3/EEST). During the maintenance break, you cannot access your completed studies or see who uses your data on My Studyinfo. In addition, you cannot grant access to your study information to other service providers (e.g. HSL or Frank). We apologize for the inconvenience.",
+  "notification": "Studyinfo is experiencing disturbances. You may not be able to see your application or certain application options. We are currently investigating the issue. We apologize for the inconvenience.",
   "greeting": "Welcome!",
   "login": {
     "header": "Welcome to My Studyinfo!",
