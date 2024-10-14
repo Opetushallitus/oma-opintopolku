@@ -4,7 +4,7 @@
   "greeting": "Welcome!",
   "login": {
     "header": "Welcome to My Studyinfo!",
-    "info": "My Studyinfo provides services for identified and logged in users. The services available are listed below. You can access these services in My Studyinfo only by logging in via Suomi.fi e-Identification with Finnish online banking credentials (e-identification must be enabled), a Finnish electronic ID-card or mobile certificate. Identification methods for foreigners in Suomi.fi e-Identification are not currently supported."
+    "info": "My Studyinfo has a maintenance break on Friday 25 October 2024 at 11:00-14:00 (UTC+3). During the break, the functions of My Studyinfo are not in use. We apologize for any inconvenience caused by the break."
   },
   "oppijanumero": "National learner ID:"
 }
