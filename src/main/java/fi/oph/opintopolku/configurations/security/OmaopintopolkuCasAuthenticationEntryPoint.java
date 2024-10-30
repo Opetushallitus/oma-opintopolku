@@ -1,16 +1,17 @@
 package fi.oph.opintopolku.configurations.security;
 
 import fi.oph.opintopolku.configurations.ConfigEnums;
-import org.jasig.cas.client.util.CommonUtils;
+import org.apereo.cas.client.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.cas.web.CasAuthenticationEntryPoint;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.net.URISyntaxException;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class OmaopintopolkuCasAuthenticationEntryPoint extends CasAuthenticationEntryPoint {
     private final static String valtuudet_enabled = ConfigEnums.VALTUUDET_ENABLED.value();
@@ -28,7 +29,7 @@ public class OmaopintopolkuCasAuthenticationEntryPoint extends CasAuthentication
         }
         super.getServiceProperties().setService(serviceUrl);
         super.setLoginUrl(getLocalizedLoginUrl(serviceUrl));
-        return CommonUtils.constructServiceUrl(null, response,
+        return WebUtils.constructServiceUrl(null, response,
             serviceUrl, null,
             super.getServiceProperties().getArtifactParameter(),
             super.getEncodeServiceUrlWithSessionId());
