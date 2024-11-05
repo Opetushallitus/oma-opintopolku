@@ -27,7 +27,7 @@ npm run e2e
 npm test
 ```
 ## Tietokannan käynnistys
-    docker run --rm --name omaopintopolku-db -p 5488:5432 -e POSTGRES_USER=oph -e POSTGRES_PASSWORD=oph -e POSTGRES_DB=omaopintopolku -d postgres:11.5
+    docker run --rm --name omaopintopolku-db -p 5488:5432 -e POSTGRES_USER=oph -e POSTGRES_PASSWORD=oph -e POSTGRES_DB=omaopintopolku -d postgres:15.4
 
 ## Palvelun käynnistys lokaalisti
     mvn clean package

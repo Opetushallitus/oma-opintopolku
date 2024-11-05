@@ -1,14 +1,13 @@
 package fi.oph.opintopolku.configurations.security;
 
 import fi.oph.opintopolku.configurations.processor.OmaopintopolkuCorsProcessor;
+import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.cas.ServiceProperties;
 import org.springframework.security.cas.web.authentication.ServiceAuthenticationDetails;
 import org.springframework.security.cas.web.authentication.ServiceAuthenticationDetailsSource;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
-
-import javax.servlet.http.HttpServletRequest;
 
 public class OmaOpintopolkuServiceAuthenticationDetailsSource extends ServiceAuthenticationDetailsSource {
     private static final Logger logger = LoggerFactory.getLogger(OmaopintopolkuCorsProcessor.class);

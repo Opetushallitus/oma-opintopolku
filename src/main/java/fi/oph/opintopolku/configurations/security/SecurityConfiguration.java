@@ -3,12 +3,11 @@ package fi.oph.opintopolku.configurations.security;
 import fi.oph.opintopolku.configurations.processor.OmaopintopolkuCorsProcessor;
 import fi.oph.opintopolku.configurations.properties.CasOppijaProperties;
 import fi.oph.opintopolku.services.impl.OmaopintopolkuUserDetailsServiceImpl;
-import fi.vm.sade.java_utils.security.OpintopolkuCasAuthenticationFilter;
 import fi.vm.sade.properties.OphProperties;
-import org.jasig.cas.client.session.SessionMappingStorage;
-import org.jasig.cas.client.session.SingleSignOutFilter;
-import org.jasig.cas.client.validation.Cas20ProxyTicketValidator;
-import org.jasig.cas.client.validation.TicketValidator;
+import org.apereo.cas.client.session.SessionMappingStorage;
+import org.apereo.cas.client.session.SingleSignOutFilter;
+import org.apereo.cas.client.validation.Cas20ProxyTicketValidator;
+import org.apereo.cas.client.validation.TicketValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,11 +15,11 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.cas.ServiceProperties;
 import org.springframework.security.cas.authentication.CasAuthenticationProvider;
 import org.springframework.security.cas.web.CasAuthenticationFilter;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -30,7 +29,7 @@ import java.util.Arrays;
 @Configuration
 @EnableGlobalMethodSecurity(jsr250Enabled = false, prePostEnabled = true, securedEnabled = true)
 @EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration {
     private CasOppijaProperties casOppijaProperties;
     private OphProperties ophProperties;
     private Environment environment;
@@ -79,9 +78,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     // CAS filter
     //
     @Bean
-    public CasAuthenticationFilter casAuthenticationFilter() throws Exception {
+    public CasAuthenticationFilter casAuthenticationFilter(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         OmaOpintopolkuCasAuthenticationFilter casAuthenticationFilter = new OmaOpintopolkuCasAuthenticationFilter(serviceProperties());
-        casAuthenticationFilter.setAuthenticationManager(authenticationManager());
+        casAuthenticationFilter.setAuthenticationManager(authenticationConfiguration.getAuthenticationManager());
         casAuthenticationFilter.setFilterProcessesUrl("/j_spring_cas_security_check");
         return casAuthenticationFilter;
     }
@@ -94,7 +93,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     public SingleSignOutFilter singleSignOutFilter() {
         SingleSignOutFilter singleSignOutFilter = new SingleSignOutFilter();
-        singleSignOutFilter.setCasServerUrlPrefix(this.ophProperties.url("cas-oppija.url"));
+        //singleSignOutFilter.setCasServerUrlPrefix(this.ophProperties.url("cas-oppija.url"));
         singleSignOutFilter.setIgnoreInitConfiguration(true);
         singleSignOutFilter.setSessionMappingStorage(sessionMappingStorage);
         return singleSignOutFilter;
@@ -111,21 +110,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return omaOpintopolkuCasAuthenticationEntryPoint;
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http, CasAuthenticationFilter casAuthenticationFilter) throws Exception {
         http
             .addFilter(corsFilter())
-            .cors().disable()
-            .csrf().disable()
+            .cors(cors -> cors.disable())
+            .csrf(csrf -> csrf.disable())
             .authorizeRequests()
-            .antMatchers("/authenticate").authenticated()
-            .antMatchers("/session").authenticated()
+            .requestMatchers("/authenticate").authenticated()
+            .requestMatchers("/session").authenticated()
             .anyRequest().permitAll()
             .and()
-            .addFilter(casAuthenticationFilter())
-            .exceptionHandling().authenticationEntryPoint(omaOpintopolkuCasAuthenticationEntryPoint())
-            .and()
+            .addFilter(casAuthenticationFilter)
+            .exceptionHandling(eh -> eh.authenticationEntryPoint(omaOpintopolkuCasAuthenticationEntryPoint()))
+            //.and()
             .addFilterBefore(singleSignOutFilter(), CasAuthenticationFilter.class);
+        return http.build();
     }
 
     @Bean
@@ -147,9 +147,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return corsFilter;
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .authenticationProvider(casAuthenticationProvider());
-    }
 }
