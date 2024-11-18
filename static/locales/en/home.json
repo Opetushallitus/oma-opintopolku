@@ -1,6 +1,6 @@
 {
   "description": "You are logged in and you can view your completed studies, see your applications to Finnish Educational Institutions and see what information is stored in the national data warehouse for early childhood education and care - Varda.",
-  "notification": "My Studyinfo is experiencing disturbances. Due to the disturbance, you cannot see your study records or share study information. VALPAS is also out of order during this disturbance. Estimated duration of the disturbance is approximately two hours. We apologize for the inconvenience.",
+  "notification": "My Studyinfo is experiencing disturbances. Due to the disturbance, you cannot see your study records or share study information. VALPAS is also out of order during this disturbance. We apologize for the inconvenience.",
   "greeting": "Welcome!",
   "login": {
     "header": "Welcome to My Studyinfo!",

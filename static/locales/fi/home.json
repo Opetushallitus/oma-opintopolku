@@ -1,6 +1,6 @@
 {
   "description": "Olet kirjautunut sisään ja voit tarkastella omia opintosuorituksia vuosien varrelta, hakemuksiasi eri oppilaitoksiin, sekä varhaiskasvatuksen tietovarannossa olevia tietoja.",
-  "notification": "Omien opintosuoritusten tarkastelussa ja Valpas-palveluissa on tilapäinen häiriö, joka on alkanut tänään klo 13:15. KOSKI- ja Valpas- palvelu ovat poissa käytöstä. Arvioitus korjausaika noin kaksi tuntia. Pahoittelemme häiriöstä aiheutuvaa haittaa.",
+  "notification": "Omien opintosuoritusten tarkastelussa ja Valpas-palveluissa on tilapäinen häiriö, joka on alkanut tänään klo 13:15. KOSKI- ja Valpas- palvelu ovat poissa käytöstä.  Pahoittelemme häiriöstä aiheutuvaa haittaa.",
   "greeting": "Tervetuloa!",
   "login": {
     "header": "Tervetuloa Oma Opintopolkuun!",
