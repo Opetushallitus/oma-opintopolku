@@ -1,6 +1,6 @@
 {
   "description": "Du har loggat in och du kan granska dina tidigare studieprestationer, ansökningar till olika läroanstalter eller uppgifter som har sparats i Informationsresursen inom småbarnspedagogik (Varda).",
-  "notification": "KOSKI- tjänsten och Valpas-tjänsten har haft en tillfällig störning från och med klockan 13:15. Tjänsterna KOSKI och Valpas är ur drift. Vi beklagar besväret som störningen orsakar.",
+  "notification": "På grund av underhållsförfaranden är tjänsterna i Min Studieinfo ur bruk fredagen 29.11.2024 kl. 9:00-16:00. Dessutom kan ansökningar inte skickas eller redigeras. Vi beklagar för eventuella olägenheter som avbrotten orsakar.",
   "greeting": "Välkommen!",
   "login": {
     "header": "Välkommen till Min Studieinfo!",
