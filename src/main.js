@@ -1,6 +1,6 @@
 import './polyfills'
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './main.css';
 import './i18n';
 import Home from './components/home/Home';
@@ -12,4 +12,7 @@ window.Service = {
   getUser
 };
 
-ReactDOM.render(<Home ref={(home) => {window.home = home}} />, document.getElementById('content'));
+const domNode = document.getElementById('content');
+const content = createRoot(domNode);
+
+content.render(<Home ref={(home) => {window.home = home}} />);

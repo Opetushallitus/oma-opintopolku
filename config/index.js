@@ -3,15 +3,11 @@
 const path = require('path')
 
 module.exports = {
-  common: {
-    contentBase: path.resolve(__dirname, '../src/main/resources/public')
-  },
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/oma-opintopolku',
-    proxyTable: {},
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -19,7 +15,6 @@ module.exports = {
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
-    poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
     cacheBusting: true,
 

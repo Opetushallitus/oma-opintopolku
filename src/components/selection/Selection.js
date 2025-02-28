@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectionItem from '../selectionitem/SelectionItem';
 import Link from '../link/Link'
-import styles from './Selection.css';
+import * as styles from './Selection.css';
 import koskiImg from 'Static/img/opintoni_white.svg';
 import valpasImg from 'Static/img/opintoni_white.svg';
 import vardaImg from 'Static/img/opintoni_white.svg';

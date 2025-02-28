@@ -2,12 +2,11 @@
 const utils = require('./utils');
 const webpack = require('webpack');
 const config = require('../config');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf');
 const HtmlWebpackPlugin = require('html-webpack-plugin'),
       WriteFilePlugin = require('write-file-webpack-plugin');
 
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
 
 const HOST = process.env.HOST;
@@ -15,21 +14,19 @@ const PORT = process.env.PORT && Number(process.env.PORT);
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
-    clientLogLevel: 'warning',
     hot: true,
-    contentBase: config.common.contentBase,
     compress: true,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
-    overlay: { warnings: false, errors: true },
-    publicPath: config.dev.assetsPublicPath,
-    proxy: config.dev.proxyTable,
-    quiet: true, // necessary for FriendlyErrorsPlugin
-    watchOptions: {
-      poll: config.dev.poll,
+    client: {
+      logging: 'warn',
+      overlay: { warnings: false, errors: true, runtimeErrors: true }
+    },
+    static: {
+      publicPath: config.dev.assetsPublicPath
     }
   },
   plugins: [
@@ -55,16 +52,6 @@ module.exports = new Promise((resolve, reject) => {
       process.env.PORT = port;
       // add port to devServer config
       devWebpackConfig.devServer.port = port;
-
-      // Add FriendlyErrorsPlugin
-      devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
-        compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
-        },
-        onErrors: config.dev.notifyOnErrors
-        ? utils.createNotifierCallback()
-        : undefined
-      }));
 
       resolve(devWebpackConfig)
     }

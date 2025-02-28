@@ -16,15 +16,6 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 ## Tietokannan käynnistys
     docker run --rm --name omaopintopolku-db -p 5488:5432 -e POSTGRES_USER=oph -e POSTGRES_PASSWORD=oph -e POSTGRES_DB=omaopintopolku -d postgres:15.4
