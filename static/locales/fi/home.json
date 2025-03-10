@@ -1,6 +1,6 @@
 {
   "description": "Olet kirjautunut sisään ja voit tarkastella omia opintosuorituksia vuosien varrelta, hakemuksiasi eri oppilaitoksiin, sekä varhaiskasvatuksen tietovarannossa olevia tietoja.",
-  "notification": "KOSKI-palvelussa on käyttökatko 12.6. klo 17.00–18.30. Katkon aikana Opintoni- tai Tietojeni käyttö -sivut eivät toimi Oma Opintopolussa. Lisäksi tietojen luovuttaminen muille tahoille (HSL, Frank, ym.) ja esimerkiksi opiskelijastatuksen päivittäminen HSL:lle ei onnistu tänä aikana. Pahoittelemme häiriötä.",
+  "notification": "eHOKS-palvelu on poissa käytöstä tiistaina 11.3.25 klo 14 alkaen huoltotöiden vuoksi. Pahoittelemme katkosta aiheutuvaa haittaa.",
   "greeting": "Tervetuloa!",
   "login": {
     "header": "Tervetuloa Oma Opintopolkuun!",
