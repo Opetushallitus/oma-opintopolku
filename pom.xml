@@ -12,12 +12,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.5</version>
+        <version>3.4.3</version>
     </parent>
 
     <properties>
         <java.version>21</java.version>
         <lombok.version>1.18.34</lombok.version>
+        <flyway.version>11.3.3</flyway.version>
+        <log4j.version>2.24.3</log4j.version>
     </properties>
 
     <dependencyManagement>
@@ -25,22 +27,22 @@
             <dependency>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-core</artifactId>
-                <version>10.20.1</version>
+                <version>${flyway.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-database-postgresql</artifactId>
-                <version>10.20.1</version>
+                <version>${flyway.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-to-slf4j</artifactId>
-                <version>2.17.0</version>
+                <version>${log4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
-                <version>2.17.0</version>
+                <version>${log4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -75,17 +77,17 @@
         <dependency>
             <groupId>fi.vm.sade.java-utils</groupId>
             <artifactId>opintopolku-cas-servlet-filter</artifactId>
-            <version>0.1.2-SNAPSHOT</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fi.vm.sade.java-utils</groupId>
             <artifactId>opintopolku-user-details-service</artifactId>
-            <version>0.3.0-SNAPSHOT</version>
+            <version>0.5.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fi.vm.sade.java-utils</groupId>
             <artifactId>java-properties</artifactId>
-            <version>0.1.0-SNAPSHOT</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -117,28 +119,28 @@
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
-            <version>2.9.9</version>
+            <version>2.13.1</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.2.0</version>
+            <version>5.12.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>fi.vm.sade.java-utils</groupId>
             <artifactId>java-http</artifactId>
-            <version>0.6.0-SNAPSHOT</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.github.kagkarlsson</groupId>
             <artifactId>db-scheduler</artifactId>
-            <version>5.2</version>
+            <version>15.3.0</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback.access</groupId>
-            <artifactId>tomcat</artifactId>
-            <version>2.0.3</version>
+            <artifactId>logback-access-tomcat</artifactId>
+            <version>2.0.6</version>
         </dependency>
 
     </dependencies>
@@ -245,6 +247,19 @@
     </profiles>
 
     <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/opetushallitus/packages</url>
+            <releases>
+                <enabled>false</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
         <repository>
             <id>oph-sade-artifactory-snapshots</id>
             <url>https://artifactory.opintopolku.fi/artifactory/oph-sade-snapshot-local</url>

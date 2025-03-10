@@ -138,3 +138,5 @@
   background-color: #b2b2b2;
   cursor: not-allowed;
 }
+
+:local(.icon-image) {}
