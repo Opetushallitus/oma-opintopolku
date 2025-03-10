@@ -1,6 +1,6 @@
 {
   "description": "You are logged in and you can view your completed studies, see your applications to Finnish Educational Institutions and see what information is stored in the national data warehouse for early childhood education and care - Varda.",
-  "notification": "",
+  "notification": "Maintenance break in eHOKS on Tuesday 11 March 2025 from 14 (UTC+2) onwards. During the break, eHOKS is not in use. We apologize for any inconvenience caused by the break.",
   "greeting": "Welcome!",
   "login": {
     "header": "Welcome to My Studyinfo!",
