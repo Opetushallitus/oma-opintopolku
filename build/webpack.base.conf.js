@@ -2,12 +2,15 @@
 const path = require('path');
 const utils = require('./utils');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const config = require("../config")
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
+
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -15,16 +18,15 @@ module.exports = {
     app: './src/main.js'
   },
   plugins: [
-    new CleanWebpackPlugin(['public'], {
-      root: resolve('src/main/resources')
-    }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: resolve('src/main/resources/public'),
-        ignore: ['.*']
-      }
-    ])
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../static'),
+          to: config.build.assetsRoot,
+        }
+      ]
+    })
   ],
   output: {
     path: resolve('src/main/resources/public'),
@@ -32,7 +34,7 @@ module.exports = {
     publicPath: '/oma-opintopolku/',
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    extensions: ['.js', '.json', '.css'],
     alias: {
       '@': resolve('src'),
       'Src': resolve('src'),
@@ -42,19 +44,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.js$/,
         use: [ 'babel-loader' ],
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
-          { loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader },
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              sourceMap: true
+              esModule: true,
+              modules: {
+                namedExport: true,
+              },
             }
           }
         ]
@@ -84,14 +88,5 @@ module.exports = {
         }
       }
     ]
-  },
-  node: {
-    // prevent webpack from injecting mocks to Node native modules
-    // that does not make sense for the client
-    dgram: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    child_process: 'empty'
   }
 }
