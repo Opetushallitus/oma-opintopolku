@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
-import Selection from '../selection/Selection';
-import Greeting from '../greeting/Greeting';
-import './Home.css';
+import React, { Fragment } from "react";
+import Selection from "../selection/Selection";
+import Greeting from "../greeting/Greeting";
+import "./Home.css";
 
 class Home extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -13,30 +12,38 @@ class Home extends React.Component {
         birthDay: "",
         personOid: "",
         hetu: "",
-        usingValtuudet: false
+        usingValtuudet: false,
       },
-      isLoggedIn: false
-    }
+      isLoggedIn: false,
+    };
   }
 
   setUser = (user) => {
     if (user) {
-      this.setState({user: user, isLoggedIn: true});
+      this.setState({ user: user, isLoggedIn: true });
     }
   };
 
   setLoggedIn = (value) => {
-    this.setState({isLoggedIn: value});
+    this.setState({ isLoggedIn: value });
   };
 
   render() {
-    const showNotification = false;
+    const showNotification = true;
     return (
-    <Fragment>
-      <Greeting user={this.state.user} isLoggedIn={this.state.isLoggedIn} showNotification={showNotification} />
-      <Selection isLoggedIn={this.state.isLoggedIn} usingValtuudet={this.state.user.usingValtuudet}/>
-    </Fragment>
-  )}
+      <Fragment>
+        <Greeting
+          user={this.state.user}
+          isLoggedIn={this.state.isLoggedIn}
+          showNotification={showNotification}
+        />
+        <Selection
+          isLoggedIn={this.state.isLoggedIn}
+          usingValtuudet={this.state.user.usingValtuudet}
+        />
+      </Fragment>
+    );
+  }
 }
 
 export default Home;

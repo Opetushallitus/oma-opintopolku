@@ -1,6 +1,6 @@
 {
   "description": "You are logged in and you can view your completed studies, see your applications to Finnish Educational Institutions and see what information is stored in the national data warehouse for early childhood education and care - Varda.",
-  "notification": "A maintenance break in KOSKI 12 June at 17-18:30 (UTC+3/EEST). During the maintenance break, you cannot access your completed studies or see who uses your data on My Studyinfo. In addition, you cannot grant access to your study information to other service providers (e.g. HSL or Frank). We apologize for the inconvenience.",
+  "notification": "The Monitoring and Tracking Service for Compulsory Education (Valpas) will be temporarily unavailable on Tuesday 22 April between 12 noon and 1 p.m. due to maintenance measures. We apologize for any inconvenience caused by the break.",
   "greeting": "Welcome!",
   "login": {
     "header": "Welcome to My Studyinfo!",

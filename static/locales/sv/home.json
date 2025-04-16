@@ -1,6 +1,6 @@
 {
   "description": "Du har loggat in och du kan granska dina tidigare studieprestationer, ansökningar till olika läroanstalter eller uppgifter som har sparats i Informationsresursen inom småbarnspedagogik (Varda).",
-  "notification": "Serviceavbrott i KOSKI-tjänsten 12.6. kl. 17.00–18.30. Under serviceavbrottet fungerar inte sidorna Mina studier och Aktörer som använt mina uppgifter i Min Studieinfo, inte heller överlämning av uppgifter till HRT, Frank, osv. Det går exempelvis inte att uppdatera studerandestatus till HRT. Vi beklagar störningen.",
+  "notification": "Uppföljnings- och tillsynstjänsten för läroplikten (Valpas) är tillfälligt ur bruk tisdagen den 22 april klockan 12–13 på grund av underhållsförfaranden. Vi ber om ursäkt för eventuella olägenheter som orsakas av avbrottet.",
   "greeting": "Välkommen!",
   "login": {
     "header": "Välkommen till Min Studieinfo!",
