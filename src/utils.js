@@ -119,3 +119,11 @@ function getLanguageFromHost(host) {
   }
   return 'fi'
 }
+
+export function getHairiotiedoteTranslations(notifications = [], lang) {
+  const userLang = lang ?? 'fi';
+
+  return notifications.map(notification => {
+    return notification?.hairionKuvaus[userLang]
+  })
+}

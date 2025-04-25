@@ -109,6 +109,12 @@
             <artifactId>HikariCP</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.contentful.java</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>10.5.21</version>
+        </dependency>
+
         <!-- Compile only -->
         <dependency>
             <groupId>org.projectlombok</groupId>
