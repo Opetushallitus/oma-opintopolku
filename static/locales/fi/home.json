@@ -1,6 +1,6 @@
 {
   "description": "Olet kirjautunut sisään ja voit tarkastella omia opintosuorituksia vuosien varrelta, hakemuksiasi eri oppilaitoksiin, sekä varhaiskasvatuksen tietovarannossa olevia tietoja.",
-  "notification": "KOSKI-palvelussa on käyttökatko 12.6. klo 17.00–18.30. Katkon aikana Opintoni- tai Tietojeni käyttö -sivut eivät toimi Oma Opintopolussa. Lisäksi tietojen luovuttaminen muille tahoille (HSL, Frank, ym.) ja esimerkiksi opiskelijastatuksen päivittäminen HSL:lle ei onnistu tänä aikana. Pahoittelemme häiriötä.",
+  "notification": "Oppivelvollisuuden seuranta- ja valvontapalvelu (Valpas) on hetkellisesti pois käytöstä maanantaina 28.4. klo 12–13 välisenä aikana huoltotoimenpiteiden vuoksi. Pahoittelemme katkon mahdollisesti aiheuttamaa haittaa.",
   "greeting": "Tervetuloa!",
   "login": {
     "header": "Tervetuloa Oma Opintopolkuun!",
