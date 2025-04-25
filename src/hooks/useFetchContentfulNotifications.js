@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 export function useFetchContentfulNotifications() {
-  console.log("FETCH BACKEND")
   const [hairiotiedotteet, setHairiotiedotteet] = useState([]);
 
   useEffect(() => {
@@ -15,7 +14,6 @@ export function useFetchContentfulNotifications() {
         }
 
         const json = await response.json();
-        console.log({json})
         setHairiotiedotteet(json)
       } catch (error) {
         console.error(error.message);

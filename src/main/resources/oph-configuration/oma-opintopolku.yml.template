@@ -36,3 +36,6 @@ contentful:
   contentful-space-id: {{konfo_contentful_space_id}}
   content-delivery-api-access-token: {{omaopintopolku_contentful_delivery_api_access_token}}
   contentful-environment-id: {{konfo_contentful_environment_id}}
+  contentful-space-id-en: {{konfo_contentful_space_id_en}}
+  content-delivery-api-access-token-en: {{omaopintopolku_contentful_delivery_api_access_token_en}}
+  contentful-environment-id-en: {{konfo_contentful_environment_id_en}}
