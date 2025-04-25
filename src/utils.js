@@ -10,7 +10,7 @@ function fetchUser() {
   const domain = `${window.location.protocol}//${window.location.hostname}`;
   const sessionUrl = domain + '/oma-opintopolku/session'
   return fetch(sessionUrl, {
-    headers: new Headers({'Caller-Id': '1.2.246.562.10.00000000001.oma-opintopolku.frontend'}),
+    headers: new Headers({ 'Caller-Id': '1.2.246.562.10.00000000001.oma-opintopolku.frontend' }),
     credentials: 'include'
   })
 }
@@ -42,18 +42,18 @@ export function getUser() {
                   reject(new Error('No session found!'));
                 }
               }).catch(err => {
-              console.error(err);
-              reject(new Error('Failed to fetch session!'));
-            });
+                console.error(err);
+                reject(new Error('Failed to fetch session!'));
+              });
           })
         } else {
           window.home.setLoggedIn(false);
           reject(new Error('No session found!'));
         }
       }).catch(err => {
-      console.error(err);
-      reject(new Error('Failed to fetch session!'));
-    });
+        console.error(err);
+        reject(new Error('Failed to fetch session!'));
+      });
   });
 }
 
@@ -120,10 +120,8 @@ function getLanguageFromHost(host) {
   return 'fi'
 }
 
-export function getHairiotiedoteTranslations(notifications = [], lang) {
+export function getHairiotiedoteTranslation(notification = [], lang) {
   const userLang = lang ?? 'fi';
 
-  return notifications.map(notification => {
-    return notification?.hairionKuvaus[userLang]
-  })
+  return notification?.hairionKuvaus?.[userLang]
 }

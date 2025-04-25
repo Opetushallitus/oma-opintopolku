@@ -1,24 +1,25 @@
 import React from 'react';
+import { Alert, Stack } from '@mui/material';
 import { useFetchContentfulNotifications } from '../../hooks/useFetchContentfulNotifications';
-import { getHairiotiedoteTranslations } from '../../utils.js'
-import * as styles from './Greeting.css';
+import { getHairiotiedoteTranslation } from '../../utils.js'
 import { getLang } from '../../utils';
 
 export const Notifications = () => {
   const notifications = useFetchContentfulNotifications();
   const lang = getLang();
 
-  const notificationsTranslations = getHairiotiedoteTranslations(notifications, lang);
   return (
-    <div>
+    <Stack>
       {notifications?.length > 0 && (
-        notificationsTranslations.map((notification, i) => {
+        notifications.map((notification, i) => {
           return (
-            <div key={i} className={styles.notification}>
-              <p>{notification}</p>
-            </div>)
+            <Alert key={i}
+              severity={`${notification.alertType?.[lang] ?? 'error'}`}
+            >
+              {getHairiotiedoteTranslation(notification, lang)}
+            </Alert>)
         })
       )}
-    </div>
+    </Stack>
   );
 };
