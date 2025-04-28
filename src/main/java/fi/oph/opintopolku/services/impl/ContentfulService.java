@@ -61,12 +61,15 @@ public class ContentfulService {
     public List<Map<String, Object>> getHairiotiedotteetFromContentful() {
         List<CDAResource> hairiotiedotteetFiSv;
         List<CDAResource> hairiotiedotteetEn;
+        String hairiotiedoteContentType = "hairiotiedote";
+        String whereShownField = "fields.whereShown";
+        String serviceName = "Oma opintopolku";
 
         try {
             hairiotiedotteetFiSv = clientFiSv
                 .fetch(CDAEntry.class)
-                .withContentType("hairiotiedote")
-                .where("fields.whereShown", QueryOperation.Matches, "Oma opintopolku")
+                .withContentType(hairiotiedoteContentType)
+                .where(whereShownField, QueryOperation.Matches, serviceName)
                 .where("locale", "*")
                 .all()
                 .items();
@@ -77,8 +80,8 @@ public class ContentfulService {
         try {
             hairiotiedotteetEn = clientEn
                 .fetch(CDAEntry.class)
-                .withContentType("hairiotiedote")
-                .where("fields.whereShown", QueryOperation.Matches, "Oma opintopolku")
+                .withContentType(hairiotiedoteContentType)
+                .where(whereShownField, QueryOperation.Matches, serviceName)
                 .all()
                 .items();
         } catch (CDAHttpException e) {
