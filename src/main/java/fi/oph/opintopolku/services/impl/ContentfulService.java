@@ -16,6 +16,10 @@ import java.util.stream.Stream;
 public class ContentfulService {
     private static final Logger logger = LoggerFactory.getLogger(ContentfulService.class);
 
+    String hairiotiedoteContentType = "hairiotiedote";
+    String whereShownField = "fields.whereShown";
+    String serviceName = "Oma opintopolku";
+
     private final CDAClient clientFiSv;
     private final CDAClient clientEn;
 
@@ -58,12 +62,10 @@ public class ContentfulService {
             });
     }
 
-    public List<Map<String, Object>> getHairiotiedotteetFromContentful() {
+    public List<Map<String, Object>> getHairiotiedotteetFiSvFromContentful() {
         List<CDAResource> hairiotiedotteetFiSv;
-        List<CDAResource> hairiotiedotteetEn;
-        String hairiotiedoteContentType = "hairiotiedote";
-        String whereShownField = "fields.whereShown";
-        String serviceName = "Oma opintopolku";
+
+        logger.info("Fetching FI/SV hairiotiedotteet from Contentful API");
 
         try {
             hairiotiedotteetFiSv = clientFiSv
@@ -77,6 +79,14 @@ public class ContentfulService {
             hairiotiedotteetFiSv = handleCdaHttpException(e);
         }
 
+        return getHairiotiedoteRawFields(hairiotiedotteetFiSv).toList();
+    }
+
+    public List<Map<String, Object>> getHairiotiedotteetEnFromContentful() {
+        List<CDAResource> hairiotiedotteetEn;
+
+        logger.info("Fetching EN hairiotiedotteet from Contentful API");
+
         try {
             hairiotiedotteetEn = clientEn
                 .fetch(CDAEntry.class)
@@ -88,9 +98,6 @@ public class ContentfulService {
             hairiotiedotteetEn = handleCdaHttpException(e);
         }
 
-        Stream<Map<String, Object>> hairiotiedotteetFiSvRawFields = getHairiotiedoteRawFields(hairiotiedotteetFiSv);
-        Stream<Map<String, Object>> hairiotiedotteetEnRawFields = getHairiotiedoteRawFields(hairiotiedotteetEn);
-
-        return Stream.concat(hairiotiedotteetFiSvRawFields, hairiotiedotteetEnRawFields).toList();
+        return getHairiotiedoteRawFields(hairiotiedotteetEn).toList();
     }
 }

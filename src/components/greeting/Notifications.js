@@ -10,8 +10,7 @@ export const Notifications = () => {
   const userLang = getLang();
   const envDefaultLanguage = userLang === EN_LANGUAGE ? EN_LANGUAGE : DEFAULT_LANGUAGE;
 
-  const notificationsWithUserLanguage = notifications.filter(notification => notification.hairionKuvaus?.[userLang])
-  const sortedNotifications = sortByOrderNumber(notificationsWithUserLanguage, envDefaultLanguage);
+  const sortedNotifications = sortByOrderNumber(notifications, envDefaultLanguage);
 
   return (
     <Stack>

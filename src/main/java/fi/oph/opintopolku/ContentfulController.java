@@ -15,8 +15,18 @@ public class ContentfulController {
         this.contentfulService = contentfulService;
     }
 
-    @RequestMapping(value = "/notifications")
-    public List<Map<String, Object>> notifications() {
-        return contentfulService.getHairiotiedotteetFromContentful();
+    @RequestMapping(value = "/notifications/fi")
+    public List<Map<String, Object>> notificationsFi() {
+        return contentfulService.getHairiotiedotteetFiSvFromContentful();
+    }
+
+    @RequestMapping(value = "/notifications/sv")
+    public List<Map<String, Object>> notificationsSv() {
+        return contentfulService.getHairiotiedotteetFiSvFromContentful();
+    }
+
+    @RequestMapping(value = "/notifications/en")
+    public List<Map<String, Object>> notificationsEn() {
+        return contentfulService.getHairiotiedotteetEnFromContentful();
     }
 }
