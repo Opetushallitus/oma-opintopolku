@@ -120,8 +120,42 @@ function getLanguageFromHost(host) {
   return 'fi'
 }
 
+export const DEFAULT_LANGUAGE = 'fi';
 export function getHairiotiedoteTranslation(notification = [], lang) {
-  const userLang = lang ?? 'fi';
+  const userLang = lang ?? DEFAULT_LANGUAGE;
 
+  //TODO: Jos käyttäjän kielellä ei löydy kuvausta, käytetään suomenkielistä
   return notification?.hairionKuvaus?.[userLang]
+}
+
+export function getOrderNumber(notification, numberOfNotifications) {
+  // order-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
+  // { order: { fi: <ARVO>}}, jossa fi = default kieli contentfulissa
+  const orderNumber = notification.order?.[DEFAULT_LANGUAGE];
+
+  if (orderNumber !== undefined) {
+    return orderNumber;
+  } else {
+    return numberOfNotifications
+  }
+};
+
+
+export function sortByOrderNumber(notifications) {
+  const numberOfNotifications = notifications.length;
+  const compare = (a, b) => {
+    const orderNumberA = getOrderNumber(a, numberOfNotifications)
+    const orderNumberB = getOrderNumber(b, numberOfNotifications)
+
+    if (orderNumberA < orderNumberB) {
+      return -1;
+    } else if (orderNumberA > orderNumberB) {
+      return 1;
+    } else {
+      return 0;
+    }
+
+  };
+
+  return notifications.sort(compare)
 }
