@@ -124,7 +124,6 @@ export const DEFAULT_LANGUAGE = 'fi';
 export function getHairiotiedoteTranslation(notification = [], lang) {
   const userLang = lang ?? DEFAULT_LANGUAGE;
 
-  //TODO: Jos käyttäjän kielellä ei löydy kuvausta, käytetään suomenkielistä
   return notification?.hairionKuvaus?.[userLang]
 }
 

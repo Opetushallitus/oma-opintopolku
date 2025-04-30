@@ -15,15 +15,33 @@ export const Notifications = () => {
     <Stack>
       {sortedNotifications?.length > 0 && (
         sortedNotifications.map((notification, i) => {
-          return (
-            <Alert key={i}
-              // alertType-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
-              // { alertType: { fi: <ARVO>}}, jossa fi = default kieli contentfulissa
-              severity={`${notification.alertType?.[DEFAULT_LANGUAGE] ?? 'error'}`}
-            >
-              <Markdown>{getHairiotiedoteTranslation(notification, lang)}</Markdown>
-            </Alert>
-          )
+          const hairiotiedoteTranslation = getHairiotiedoteTranslation(notification, lang);
+          // alertType-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
+          // { alertType: { <YMPÄRISTÖN DEFAULT KIELI>: <ARVO>}}, joten fi/sv-ympäristöstä alertType sijaitsee
+          // 'fi'-avaimen arvona ja en-ympäristössä 'en'-avaimen arvona
+          const alertTypeFi = notification.alertType?.[DEFAULT_LANGUAGE]
+          const alertTypeEn = notification.alertType?.['en']
+          let severity = '';
+
+          if (alertTypeFi !== undefined) {
+            severity = alertTypeFi;
+          } else if (alertTypeEn !== undefined) {
+            severity = alertTypeEn;
+          } else {
+            severity = 'error';
+          }
+
+          {
+            if (hairiotiedoteTranslation) {
+              return (
+                <Alert key={i} severity={severity} >
+                  <Markdown>{hairiotiedoteTranslation}</Markdown>
+                </Alert>
+              )
+            } else {
+              null
+            }
+          }
         })
       )}
     </Stack>
