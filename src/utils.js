@@ -129,25 +129,25 @@ export function getHairiotiedoteTranslation(notification = [], lang) {
   return notification?.hairionKuvaus?.[userLang]
 }
 
-export function getOrderNumber(notification, numberOfNotifications) {
-  const orderNumberFiSv = notification.order?.[DEFAULT_LANGUAGE];
-  const orderNumberEn = notification.order?.[EN_LANGUAGE]
+export function getOrderNumber(notification, numberOfNotifications, envDefaultLanguage) {
+  // order-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
+  // { order: { <YMPÄRISTÖN DEFAULT KIELI>: <ARVO>}}, joten fi/sv-ympäristöstä order sijaitsee
+  // 'fi'-avaimen arvona ja en-ympäristössä 'en'-avaimen arvona
+  const orderNumber = notification.order?.[envDefaultLanguage];
 
-  if (orderNumberFiSv !== undefined) {
-    return orderNumberFiSv;
-  } else if (orderNumberEn !== undefined) {
-    return orderNumberEn;
+  if (orderNumber !== undefined) {
+    return orderNumber;
   } else {
-    return numberOfNotifications
+    return numberOfNotifications;
   }
 };
 
 
-export function sortByOrderNumber(notifications) {
+export function sortByOrderNumber(notifications, envDefaultLanguage) {
   const numberOfNotifications = notifications.length;
   const compare = (a, b) => {
-    const orderNumberA = getOrderNumber(a, numberOfNotifications)
-    const orderNumberB = getOrderNumber(b, numberOfNotifications)
+    const orderNumberA = getOrderNumber(a, numberOfNotifications, envDefaultLanguage)
+    const orderNumberB = getOrderNumber(b, numberOfNotifications, envDefaultLanguage)
 
     if (orderNumberA < orderNumberB) {
       return -1;
@@ -156,7 +156,6 @@ export function sortByOrderNumber(notifications) {
     } else {
       return 0;
     }
-
   };
 
   return notifications.sort(compare)

@@ -7,34 +7,26 @@ import Markdown from 'markdown-to-jsx';
 
 export const Notifications = () => {
   const notifications = useFetchContentfulNotifications();
-  const lang = getLang();
+  const userLang = getLang();
+  const envDefaultLanguage = userLang === EN_LANGUAGE ? EN_LANGUAGE : DEFAULT_LANGUAGE;
 
-  const sortedNotifications = sortByOrderNumber(notifications);
+  const notificationsWithUserLanguage = notifications.filter(notification => notification.hairionKuvaus?.[userLang])
+  const sortedNotifications = sortByOrderNumber(notificationsWithUserLanguage, envDefaultLanguage);
 
   return (
     <Stack>
       {sortedNotifications?.length > 0 && (
         sortedNotifications.map((notification, i) => {
-          const hairiotiedoteTranslation = getHairiotiedoteTranslation(notification, lang);
+          const hairiotiedoteTranslation = getHairiotiedoteTranslation(notification, userLang);
           // alertType-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
           // { alertType: { <YMPÄRISTÖN DEFAULT KIELI>: <ARVO>}}, joten fi/sv-ympäristöstä alertType sijaitsee
           // 'fi'-avaimen arvona ja en-ympäristössä 'en'-avaimen arvona
-          const alertTypeFi = notification.alertType?.[DEFAULT_LANGUAGE]
-          const alertTypeEn = notification.alertType?.[EN_LANGUAGE]
-          let severity = '';
-
-          if (alertTypeFi !== undefined) {
-            severity = alertTypeFi;
-          } else if (alertTypeEn !== undefined) {
-            severity = alertTypeEn;
-          } else {
-            severity = 'error';
-          }
+          const alertType = notification.alertType?.[envDefaultLanguage]
 
           {
             if (hairiotiedoteTranslation) {
               return (
-                <Alert key={i} severity={severity} >
+                <Alert key={i} severity={alertType ?? 'error'} >
                   <Markdown>{hairiotiedoteTranslation}</Markdown>
                 </Alert>
               )

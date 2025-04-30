@@ -106,12 +106,12 @@ const notificationWithoutOrder2 = {
 
 describe('getOrderNumber', () => {
   test('should return order number from notification', () => {
-    expect(getOrderNumber(notification1, 1)).toEqual(1);
+    expect(getOrderNumber(notification1, 2, 'fi')).toEqual(1);
   });
 
 
   test("should return total number of notifications for a notification that doesn't have order number defined", () => {
-    expect(getOrderNumber(notificationWithoutOrder1, 1)).toEqual(1);
+    expect(getOrderNumber(notificationWithoutOrder1, 2, 'fi')).toEqual(2);
   });
 });
 
@@ -129,7 +129,7 @@ describe('sortByOrderNumber', () => {
       notification3
     ];
 
-    expect(sortByOrderNumber(notifications)).toEqual(sortedNotifications)
+    expect(sortByOrderNumber(notifications, 'fi')).toEqual(sortedNotifications)
   });
 
   test('should place notifications in last place if their order is not defined', () => {
@@ -148,6 +148,6 @@ describe('sortByOrderNumber', () => {
       notificationWithoutOrder1
     ];
 
-    expect(sortByOrderNumber(notifications)).toEqual(sortedNotifications)
+    expect(sortByOrderNumber(notifications, 'fi')).toEqual(sortedNotifications)
   });
 });
