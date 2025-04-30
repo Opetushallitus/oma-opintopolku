@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert, Stack } from '@mui/material';
 import { useFetchContentfulNotifications } from '../../hooks/useFetchContentfulNotifications';
-import { getHairiotiedoteTranslation, sortByOrderNumber } from '../../utils.js'
+import { DEFAULT_LANGUAGE, getHairiotiedoteTranslation, sortByOrderNumber } from '../../utils.js'
 import { getLang } from '../../utils';
 import Markdown from 'markdown-to-jsx';
 
@@ -17,7 +17,9 @@ export const Notifications = () => {
         sortedNotifications.map((notification, i) => {
           return (
             <Alert key={i}
-              severity={`${notification.alertType?.[lang] ?? 'error'}`}
+              // alertType-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
+              // { alertType: { fi: <ARVO>}}, jossa fi = default kieli contentfulissa
+              severity={`${notification.alertType?.[DEFAULT_LANGUAGE] ?? 'error'}`}
             >
               <Markdown>{getHairiotiedoteTranslation(notification, lang)}</Markdown>
             </Alert>
