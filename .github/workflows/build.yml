@@ -7,6 +7,23 @@ on:
       - '**.md'
 
 jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@opetushallitus'
+      - name: Install dependencies
+        run: |
+          npm ci
+      - name: Run unit tests
+        run: |
+          npm test
+
   build:
     runs-on: ubuntu-latest
 
