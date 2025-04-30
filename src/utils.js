@@ -121,6 +121,8 @@ function getLanguageFromHost(host) {
 }
 
 export const DEFAULT_LANGUAGE = 'fi';
+export const EN_LANGUAGE = 'en';
+
 export function getHairiotiedoteTranslation(notification = [], lang) {
   const userLang = lang ?? DEFAULT_LANGUAGE;
 
@@ -128,12 +130,13 @@ export function getHairiotiedoteTranslation(notification = [], lang) {
 }
 
 export function getOrderNumber(notification, numberOfNotifications) {
-  // order-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
-  // { order: { fi: <ARVO>}}, jossa fi = default kieli contentfulissa
-  const orderNumber = notification.order?.[DEFAULT_LANGUAGE];
+  const orderNumberFiSv = notification.order?.[DEFAULT_LANGUAGE];
+  const orderNumberEn = notification.order?.[EN_LANGUAGE]
 
-  if (orderNumber !== undefined) {
-    return orderNumber;
+  if (orderNumberFiSv !== undefined) {
+    return orderNumberFiSv;
+  } else if (orderNumberEn !== undefined) {
+    return orderNumberEn;
   } else {
     return numberOfNotifications
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert, Stack } from '@mui/material';
 import { useFetchContentfulNotifications } from '../../hooks/useFetchContentfulNotifications';
-import { DEFAULT_LANGUAGE, getHairiotiedoteTranslation, sortByOrderNumber } from '../../utils.js'
+import { DEFAULT_LANGUAGE, EN_LANGUAGE, getHairiotiedoteTranslation, sortByOrderNumber } from '../../utils.js'
 import { getLang } from '../../utils';
 import Markdown from 'markdown-to-jsx';
 
@@ -20,7 +20,7 @@ export const Notifications = () => {
           // { alertType: { <YMPÄRISTÖN DEFAULT KIELI>: <ARVO>}}, joten fi/sv-ympäristöstä alertType sijaitsee
           // 'fi'-avaimen arvona ja en-ympäristössä 'en'-avaimen arvona
           const alertTypeFi = notification.alertType?.[DEFAULT_LANGUAGE]
-          const alertTypeEn = notification.alertType?.['en']
+          const alertTypeEn = notification.alertType?.[EN_LANGUAGE]
           let severity = '';
 
           if (alertTypeFi !== undefined) {
