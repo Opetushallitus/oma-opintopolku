@@ -1,8 +1,13 @@
 import React from 'react';
 import { Alert, Stack } from '@mui/material';
 import { useFetchContentfulNotifications } from '../../hooks/useFetchContentfulNotifications';
-import { DEFAULT_LANGUAGE, EN_LANGUAGE, getHairiotiedoteTranslation, sortByOrderNumber } from '../../utils.js'
-import { getLang } from '../../utils';
+import {
+  DEFAULT_LANGUAGE,
+  EN_LANGUAGE,
+  getHairiotiedoteTranslation,
+  getLang,
+  sortByOrderNumber
+} from '../../utils.js'
 import Markdown from 'markdown-to-jsx';
 
 export const Notifications = () => {
