@@ -135,11 +135,9 @@ export function getOrderNumber(notification, numberOfNotifications, envDefaultLa
   // 'fi'-avaimen arvona ja en-ympäristössä 'en'-avaimen arvona
   const orderNumber = notification.order?.[envDefaultLanguage];
 
-  if (orderNumber !== undefined) {
-    return orderNumber;
-  } else {
-    return numberOfNotifications;
-  }
+  return orderNumber === undefined
+    ? numberOfNotifications
+    : orderNumber;
 };
 
 
