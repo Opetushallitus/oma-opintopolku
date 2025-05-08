@@ -87,7 +87,7 @@ public class SessionController {
         if (isUsingValtuudet) {
             return parseDateStringFromHetu((String) attributes.getOrDefault("impersonatorNationalIdentificationNumber", ""));
         } else if (isUsingEidas) {
-            return formatDateString((String) attributes.getOrDefault("nationalIdentificationNumber", ""));
+            return formatDateString((String) attributes.getOrDefault("dateOfBirth", ""));
         } else  {
             return parseDateStringFromHetu((String) attributes.getOrDefault("nationalIdentificationNumber", ""));
         }
