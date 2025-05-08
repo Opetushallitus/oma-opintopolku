@@ -127,7 +127,7 @@ public class SessionController {
         }
         try {
             DateTime dt = stringDateformatter.parseDateTime(dateString);
-            return dt.toString("dd.MM.yyyy");
+            return formatStringFromDateTime(dt);
         } catch (IllegalArgumentException e) {
             logger.error("Error parsing date string: {}", dateString, e);
             return "";
@@ -136,10 +136,22 @@ public class SessionController {
 
     private static String parseDateStringFromHetu(String hetu) {
         if (hetu != null && Pattern.compile(HETU_REGEX).matcher(hetu).matches()) {
-            Locale locale = new Locale("fi","fi");
-            DateTime dt = hetuDateformatter.parseDateTime(hetu.substring(0, 6));
+            try {
+                DateTime dt = hetuDateformatter.parseDateTime(hetu.substring(0, 6));
+                return formatStringFromDateTime(dt);
+            } catch (IllegalArgumentException e) {
+                logger.error("Error parsing date string from hetu: {}", hetu, e);
+                return "";
+            }
+        }
+        return "";
+    }
+
+    private static String formatStringFromDateTime(DateTime dateTime) {
+        if (dateTime != null) {
+            Locale locale = new Locale("fi", "fi");
             DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, locale);
-            Date date = dt.toDate();
+            Date date = dateTime.toDate();
             return df.format(date);
         }
         return "";
