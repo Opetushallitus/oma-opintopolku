@@ -24,7 +24,8 @@ import java.util.stream.Collectors;
 
 @RestController
 public class SessionController {
-    final static DateTimeFormatter formatter = DateTimeFormat.forPattern("ddMMYY");
+    final static DateTimeFormatter hetuDateformatter = DateTimeFormat.forPattern("ddMMYY");
+    final static DateTimeFormatter stringDateformatter = DateTimeFormat.forPattern("YYYY-MM-dd");
     private static final Logger logger = LoggerFactory.getLogger(SessionController.class);
 
     private static final String HETU_REGEX = "^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([5-9]\\d\\+|\\d\\d-|[01]\\dA)\\d{3}[\\dABCDEFHJKLMNPRSTUVWXY]$";
@@ -56,6 +57,42 @@ public class SessionController {
         return !impersonatorHetu.isEmpty() || !impersonatorName.isEmpty();
     }
 
+    private static boolean isUsingEidas(Map<String, Object> attributes) {
+        String eidasIdentifier = (String) attributes.getOrDefault("personIdentifier", "");
+        return !eidasIdentifier.isEmpty();
+    }
+
+    private static String getName(boolean isUsingValtuudet, boolean isUsingEidas, Map<String, Object> attributes) {
+        //Valituudet
+        String impersonatorName = (String) attributes.getOrDefault("impersonatorDisplayName", "");
+
+        //Normaali Suomi.fi -tunnistautuminen
+        String displayName = (String) attributes.getOrDefault("displayName", "");
+
+        // Eidas-tunnistautuminen
+        String firstName = (String) attributes.getOrDefault("firstName", "");
+        String familyName = (String) attributes.getOrDefault("familyName", "");
+        String eidasName = firstName + " " + familyName;
+
+        if (isUsingValtuudet) {
+            return impersonatorName;
+        } else if (isUsingEidas) {
+            return eidasName.trim();
+        } else  {
+            return displayName;
+        }
+    }
+
+    private static String getBirthDate(boolean isUsingValtuudet, boolean isUsingEidas, Map<String, Object> attributes) {
+        if (isUsingValtuudet) {
+            return parseDateStringFromHetu((String) attributes.getOrDefault("impersonatorNationalIdentificationNumber", ""));
+        } else if (isUsingEidas) {
+            return formatDateString((String) attributes.getOrDefault("nationalIdentificationNumber", ""));
+        } else  {
+            return parseDateStringFromHetu((String) attributes.getOrDefault("nationalIdentificationNumber", ""));
+        }
+    }
+
     private static User createUser(Map<String, Object> attributes) {
         val user = new User();
 
@@ -64,12 +101,10 @@ public class SessionController {
         logger.info("Setting user properties, data: {}", attributesAsString);
 
         boolean isUsingValtuudet = isUsingValtuudet(attributes);
-        String displayName = !isUsingValtuudet
-            ? (String) attributes.getOrDefault("displayName", "")
-            : (String) attributes.getOrDefault("impersonatorDisplayName", "");
-        String birthDay = !isUsingValtuudet
-            ? parseDateStringFromHetu((String) attributes.getOrDefault("nationalIdentificationNumber", ""))
-            : parseDateStringFromHetu((String) attributes.getOrDefault("impersonatorNationalIdentificationNumber", ""));
+        boolean isUsingEidas = isUsingEidas(attributes);
+
+        String displayName = getName(isUsingValtuudet, isUsingEidas, attributes);
+        String birthDay = getBirthDate(isUsingValtuudet, isUsingEidas, attributes);
         String personOid = !isUsingValtuudet
             ? (String) attributes.getOrDefault("personOid", "")
             : (String) attributes.getOrDefault("impersonatorPersonOid", "");
@@ -86,10 +121,23 @@ public class SessionController {
         return user;
     }
 
+    private static String formatDateString(String dateString) {
+        if(dateString == null || dateString.isEmpty()) {
+            return "";
+        }
+        try {
+            DateTime dt = stringDateformatter.parseDateTime(dateString);
+            return dt.toString("dd.MM.yyyy");
+        } catch (IllegalArgumentException e) {
+            logger.error("Error parsing date string: {}", dateString, e);
+            return "";
+        }
+    }
+
     private static String parseDateStringFromHetu(String hetu) {
         if (hetu != null && Pattern.compile(HETU_REGEX).matcher(hetu).matches()) {
             Locale locale = new Locale("fi","fi");
-            DateTime dt = formatter.parseDateTime(hetu.substring(0, 6));
+            DateTime dt = hetuDateformatter.parseDateTime(hetu.substring(0, 6));
             DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, locale);
             Date date = dt.toDate();
             return df.format(date);
