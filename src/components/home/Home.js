@@ -30,10 +30,9 @@ class Home extends React.Component {
   };
 
   render() {
-    const showNotification = false;
     return (
     <Fragment>
-      <Greeting user={this.state.user} isLoggedIn={this.state.isLoggedIn} showNotification={showNotification} />
+      <Greeting user={this.state.user} isLoggedIn={this.state.isLoggedIn} />
       <Selection isLoggedIn={this.state.isLoggedIn} usingValtuudet={this.state.user.usingValtuudet}/>
     </Fragment>
   )}

@@ -10,7 +10,7 @@ function fetchUser() {
   const domain = `${window.location.protocol}//${window.location.hostname}`;
   const sessionUrl = domain + '/oma-opintopolku/session'
   return fetch(sessionUrl, {
-    headers: new Headers({'Caller-Id': '1.2.246.562.10.00000000001.oma-opintopolku.frontend'}),
+    headers: new Headers({ 'Caller-Id': '1.2.246.562.10.00000000001.oma-opintopolku.frontend' }),
     credentials: 'include'
   })
 }
@@ -42,18 +42,18 @@ export function getUser() {
                   reject(new Error('No session found!'));
                 }
               }).catch(err => {
-              console.error(err);
-              reject(new Error('Failed to fetch session!'));
-            });
+                console.error(err);
+                reject(new Error('Failed to fetch session!'));
+              });
           })
         } else {
           window.home.setLoggedIn(false);
           reject(new Error('No session found!'));
         }
       }).catch(err => {
-      console.error(err);
-      reject(new Error('Failed to fetch session!'));
-    });
+        console.error(err);
+        reject(new Error('Failed to fetch session!'));
+      });
   });
 }
 
@@ -118,4 +118,43 @@ function getLanguageFromHost(host) {
     return 'en'
   }
   return 'fi'
+}
+
+export const DEFAULT_LANGUAGE = 'fi';
+export const EN_LANGUAGE = 'en';
+
+export function getHairiotiedoteTranslation(notification = [], lang) {
+  const userLang = lang ?? DEFAULT_LANGUAGE;
+
+  return notification?.hairionKuvaus?.[userLang]
+}
+
+export function getOrderNumber(notification, numberOfNotifications, envDefaultLanguage) {
+  // order-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
+  // { order: { <YMPÄRISTÖN DEFAULT KIELI>: <ARVO>}}, joten fi/sv-ympäristöstä order sijaitsee
+  // 'fi'-avaimen arvona ja en-ympäristössä 'en'-avaimen arvona
+  const orderNumber = notification.data?.order?.[envDefaultLanguage];
+
+  return orderNumber === undefined
+    ? numberOfNotifications
+    : orderNumber;
+};
+
+
+export function sortByOrderNumber(notifications, envDefaultLanguage) {
+  const numberOfNotifications = notifications.length;
+  const compare = (a, b) => {
+    const orderNumberA = getOrderNumber(a, numberOfNotifications, envDefaultLanguage)
+    const orderNumberB = getOrderNumber(b, numberOfNotifications, envDefaultLanguage)
+
+    if (orderNumberA < orderNumberB) {
+      return -1;
+    } else if (orderNumberA > orderNumberB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
+
+  return notifications.sort(compare)
 }
