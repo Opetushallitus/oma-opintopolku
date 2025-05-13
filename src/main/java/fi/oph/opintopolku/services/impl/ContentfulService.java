@@ -58,7 +58,9 @@ public class ContentfulService {
             .stream()
             .map(entry -> {
                 CDAEntry hairiotiedote = (CDAEntry) entry;
-                return hairiotiedote.rawFields();
+                String id = entry.id();
+                Map<String, Object> rawFields = hairiotiedote.rawFields();
+                return Map.of("id", id, "data", rawFields);
             });
     }
 

@@ -133,7 +133,7 @@ export function getOrderNumber(notification, numberOfNotifications, envDefaultLa
   // order-kenttä ei ole lokalisoitu contentfulissa, mutta contentfulista se palautuu muodossa
   // { order: { <YMPÄRISTÖN DEFAULT KIELI>: <ARVO>}}, joten fi/sv-ympäristöstä order sijaitsee
   // 'fi'-avaimen arvona ja en-ympäristössä 'en'-avaimen arvona
-  const orderNumber = notification.order?.[envDefaultLanguage];
+  const orderNumber = notification.data?.order?.[envDefaultLanguage];
 
   return orderNumber === undefined
     ? numberOfNotifications

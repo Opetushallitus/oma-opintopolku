@@ -1,107 +1,123 @@
 import { getOrderNumber, sortByOrderNumber } from "./utils"
 
 const notification1 = {
-  "alertType": {
-    "fi": "warning"
-  },
-  "whereShown": {
-    "fi": [
-      "Oma Opintopolku"
-    ]
-  },
-  "name": {
-    "fi": "Oma Opintopolku häiriö 1",
-    "sv": "Min Studieinfo störning 1"
-  },
-  "hairionKuvaus": {
-    "fi": "Testiviesti suomeksi",
-    "sv": "Testiviesti på svenska"
-  },
-  order: {
-    fi: 1
+  id: "4OI0c8IgI6Dm0",
+  data: {
+    "alertType": {
+      "fi": "warning"
+    },
+    "whereShown": {
+      "fi": [
+        "Oma Opintopolku"
+      ]
+    },
+    "name": {
+      "fi": "Oma Opintopolku häiriö 1",
+      "sv": "Min Studieinfo störning 1"
+    },
+    "hairionKuvaus": {
+      "fi": "Testiviesti suomeksi",
+      "sv": "Testiviesti på svenska"
+    },
+    order: {
+      fi: 1
+    }
   }
 };
 
 const notification2 = {
-  "alertType": {
-    "fi": "info"
-  },
-  "whereShown": {
-    "fi": [
-      "Oma Opintopolku"
-    ]
-  },
-  "name": {
-    "fi": "Oma Opintopolku häiriö 2",
-    "sv": "Min Studieinfo störning 2"
-  },
-  "hairionKuvaus": {
-    "fi": "Testiviesti 2 suomeksi",
-    "sv": "Testiviesti 2 på svenska"
-  },
-  order: {
-    fi: 3
+  id: "3aD0e9o2P81o",
+  data: {
+    "alertType": {
+      "fi": "info"
+    },
+    "whereShown": {
+      "fi": [
+        "Oma Opintopolku"
+      ]
+    },
+    "name": {
+      "fi": "Oma Opintopolku häiriö 2",
+      "sv": "Min Studieinfo störning 2"
+    },
+    "hairionKuvaus": {
+      "fi": "Testiviesti 2 suomeksi",
+      "sv": "Testiviesti 2 på svenska"
+    },
+    order: {
+      fi: 3
+    }
   }
 };
 
 const notification3 = {
-  "alertType": {
-    "fi": "error"
-  },
-  "whereShown": {
-    "fi": [
-      "Oma Opintopolku"
-    ]
-  },
-  "name": {
-    "fi": "Oma Opintopolku häiriö 3",
-    "sv": "Min Studieinfo störning 3"
-  },
-  "hairionKuvaus": {
-    "fi": "Testiviesti 3 suomeksi",
-    "sv": "Testiviesti 3 på svenska"
-  },
-  order: {
-    fi: 3
+  id: "kL3v912jDsq",
+  data: {
+    "alertType": {
+      "fi": "error"
+    },
+    "whereShown": {
+      "fi": [
+        "Oma Opintopolku"
+      ]
+    },
+    "name": {
+      "fi": "Oma Opintopolku häiriö 3",
+      "sv": "Min Studieinfo störning 3"
+    },
+    "hairionKuvaus": {
+      "fi": "Testiviesti 3 suomeksi",
+      "sv": "Testiviesti 3 på svenska"
+    },
+    order: {
+      fi: 3
+    }
   }
 };
 
 const notificationWithoutOrder1 = {
-  "alertType": {
-    "fi": "error"
-  },
-  "whereShown": {
-    "fi": [
-      "Oma Opintopolku"
-    ]
-  },
-  "name": {
-    "fi": "Oma Opintopolku häiriö 4",
-    "sv": "Min Studieinfo störning 4"
-  },
-  "hairionKuvaus": {
-    "fi": "Testiviesti 4 suomeksi",
-    "sv": "Testiviesti 4 på svenska"
-  },
+  id: "3krT5728j4iL",
+  data:
+  {
+    "alertType": {
+      "fi": "error"
+    },
+    "whereShown": {
+      "fi": [
+        "Oma Opintopolku"
+      ]
+    },
+    "name": {
+      "fi": "Oma Opintopolku häiriö 4",
+      "sv": "Min Studieinfo störning 4"
+    },
+    "hairionKuvaus": {
+      "fi": "Testiviesti 4 suomeksi",
+      "sv": "Testiviesti 4 på svenska"
+    },
+  }
 };
 
 const notificationWithoutOrder2 = {
-  "alertType": {
-    "fi": "error"
-  },
-  "whereShown": {
-    "fi": [
-      "Oma Opintopolku"
-    ]
-  },
-  "name": {
-    "fi": "Oma Opintopolku häiriö 5",
-    "sv": "Min Studieinfo störning 5"
-  },
-  "hairionKuvaus": {
-    "fi": "Testiviesti 5 suomeksi",
-    "sv": "Testiviesti 5 på svenska"
-  },
+  id: "rLj2069dGs2",
+  data: {
+    "alertType": {
+      "fi": "error"
+    },
+    "whereShown": {
+      "fi": [
+        "Oma Opintopolku"
+      ]
+    },
+    "name": {
+      "fi": "Oma Opintopolku häiriö 5",
+      "sv": "Min Studieinfo störning 5"
+    },
+    "hairionKuvaus": {
+      "fi": "Testiviesti 5 suomeksi",
+      "sv": "Testiviesti 5 på svenska"
+    },
+  }
 };
 
 describe('getOrderNumber', () => {
