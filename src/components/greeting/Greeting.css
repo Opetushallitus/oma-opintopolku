@@ -16,7 +16,6 @@
 :local(.greeting-container-space-below) {
   max-width: 1090px;
   margin: 0 auto 30px auto;
-  text-align: center;
 }
 
 :local(.guest-header) {
