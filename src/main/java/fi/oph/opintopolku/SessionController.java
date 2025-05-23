@@ -63,7 +63,7 @@ public class SessionController {
     }
 
     private static String getName(boolean isUsingValtuudet, boolean isUsingEidas, Map<String, Object> attributes) {
-        //Valituudet
+        //Valtuudet
         String impersonatorName = (String) attributes.getOrDefault("impersonatorDisplayName", "");
 
         //Normaali Suomi.fi -tunnistautuminen
