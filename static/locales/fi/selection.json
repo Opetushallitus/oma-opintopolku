@@ -64,6 +64,19 @@
     "linkLoggedOut": "Siirry eHOKS-palveluun",
     "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
   },
+  "yki": {
+    "title": "Yleiset kielitutkinnot (YKI)",
+    "subtitle": "Katso ja muokkaa ilmoittautumistasi YKI-testeihin",
+    "icon": "Maapalloa esittävä ikoni",
+    "label": "Omat ilmoittautumiset sivulla:",
+    "item1": "voit katsoa ilmoittautumisia viimeisen 12 kuukauden ajalta",
+    "item2": "voit siirtää ilmoittautumista yhden kerran",
+    "item3": "voit perua ilmoittautumisen",
+    "item4": "voit katsoa ne tutkinnot, joihin olet jonossa ja ottaa paikan vastaan jonosta",
+    "link": "Siiry omiin YKI-ilmoittautumisiin",
+    "linkLoggedOut": "Siiry omiin YKI-ilmoittautumisiin (vaatii tunnistautumisen)",
+    "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
+  },
   "tietojenikaytto": {
     "title": "Tietojeni käyttö"
   }

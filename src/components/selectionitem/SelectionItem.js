@@ -36,7 +36,7 @@ const SelectionItem = ({isLoggedIn, disableForValtuudet, namespace, icon, link})
       </div>
       <div className={styles['link-container']}>
         { !disableForValtuudet
-          ? <a className={`${styles.link} ${isLoggedIn ? styles['link-loggedin'] : styles['link-loggedout']}`} href={ link }>
+          ? <a className={`${styles.link} ${isLoggedIn ? styles['link-loggedin'] : styles['link-loggedout']}`} href={ link } target={namespace === 'yki' ? '_blank' : '_self'}>
             { !isLoggedIn
               ? <span className={styles['link-text']}>{t(namespace + '.linkLoggedOut')}</span>
               : <span className={styles['link-text']}>{t(namespace + '.link')}</span>
