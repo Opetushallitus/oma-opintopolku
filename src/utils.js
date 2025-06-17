@@ -88,6 +88,22 @@ function createLogoutUrl(lang) {
   return domain + '/cas-oppija/logout?service=' + encodeURIComponent(logoutdomain + '/oma-opintopolku');
 }
 
+export function createYkiAsiakasportaaliLink() {
+  const { origin} = document.location
+  const suffix = '/yki/kayttaja/tiedot'
+
+  if (origin.includes('localhost')) {
+    return 'http://localhost:4003' + suffix
+  } else if (origin.includes('untuvaopintopolku')) {
+    return 'https://yki.untuvaopintopolku.fi' + suffix
+
+  } else if (origin.includes('testiopintopolku')) {
+    return 'https://yki.testiopintopolku.fi' + suffix
+  }
+
+  return 'https://yki.opintopolku.fi' + suffix
+}
+
 function createDomain(lang) {
   const origin = document.location.origin;
   if (origin.includes('https://')) {
