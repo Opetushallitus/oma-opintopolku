@@ -15,7 +15,7 @@ const Selection = ({isLoggedIn, usingValtuudet}) => (
     <div className={styles['flex-container']}>
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='omatsivut' icon={omatsivutImg} link='/omatsivut' />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='koski' icon={koskiImg} link='/koski/omattiedot' />
-      <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='yki' icon={ykiImg} link={createYkiAsiakasportaaliLink(isLoggedIn)} />
+      <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='yki' icon={ykiImg} link={createYkiAsiakasportaaliLink()} />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={false} namespace='varda' icon={vardaImg} link='/varda' />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='ehoks' icon={koskiImg} link='/ehoks' />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='valpas' icon={valpasImg} link='/valpas' />

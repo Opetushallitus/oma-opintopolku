@@ -88,9 +88,9 @@ function createLogoutUrl(lang) {
   return domain + '/cas-oppija/logout?service=' + encodeURIComponent(logoutdomain + '/oma-opintopolku');
 }
 
-export function createYkiAsiakasportaaliLink(isLoggedIn) {
+export function createYkiAsiakasportaaliLink() {
   const { origin} = document.location
-  const suffix = isLoggedIn ? '/yki/kayttaja/tiedot' : '/yki/auth/?toUserPortal=true';
+  const suffix = '/yki/auth/?toUserPortal=true';
 
   if (origin.includes('localhost')) {
     return 'http://localhost:4003' + suffix
