@@ -73,8 +73,8 @@
     "item2": "voit siirtää ilmoittautumista yhden kerran",
     "item3": "voit perua ilmoittautumisen",
     "item4": "voit katsoa ne tutkinnot, joihin olet jonossa ja ottaa paikan vastaan jonosta",
-    "link": "Siiry omiin YKI-ilmoittautumisiin",
-    "linkLoggedOut": "Siiry omiin YKI-ilmoittautumisiin (vaatii tunnistautumisen)",
+    "link": "Siirry omiin YKI-ilmoittautumisiin",
+    "linkLoggedOut": "Siirry omiin YKI-ilmoittautumisiin (vaatii tunnistautumisen)",
     "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
   },
   "tietojenikaytto": {
