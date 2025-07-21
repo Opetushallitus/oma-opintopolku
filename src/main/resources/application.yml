@@ -28,6 +28,8 @@ cas:
   service: http://localhost:${server.port}/oma-opintopolku
   send-renew: false
   key: oma-opintopolku
+bucket:
+  url: https://konfo-content.untuvaopintopolku.fi/$1
 host:
   host-oppija: localhost
   host-cas: virkailija.localhost

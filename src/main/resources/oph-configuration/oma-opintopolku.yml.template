@@ -21,6 +21,8 @@ spring:
       max-lifetime: {{host_postgresql_omaopintopolku_max_lifetime | default('900000')}}
 cas:
   service: https://{{host_oppija}}/oma-opintopolku
+bucket:
+  url: https://{{konfo_content_s3_bucket}}/$1
 host:
   host-oppija: {{host_oppija}}
   host-cas: {{host_cas}}

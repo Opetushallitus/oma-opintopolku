@@ -1,29 +1,46 @@
-import { useEffect, useState } from 'react';
-import { getLang } from '../utils';
+import {useEffect, useState} from 'react';
+import {DEFAULT_LANGUAGE, EN_LANGUAGE, getLang, sortByOrderNumber} from '../utils';
+import { urls } from 'oph-urls-js';
+
+const SERVICE = 'Oma Opintopolku';
+
+async function getNotificationLocation(lang) {
+  const manifest = await fetch(urls.url('oma-opintopolku.content', 'manifest.json'));
+  const data = await manifest.json();
+  return data.hairiotiedote[lang.toLowerCase()];
+}
 
 export function useFetchContentfulNotifications() {
-  const [hairiotiedotteet, setHairiotiedotteet] = useState([]);
   const userLang = getLang();
 
-  useEffect(() => {
+  const [notifications, setNotifications] = useState([]);
+
+  useEffect(async () => {
     async function fetchHairiotiedotteet() {
-      const url = `/oma-opintopolku/notifications/${userLang}`
       try {
-        const response = await fetch(url);
+        const notificationLocation = await getNotificationLocation(userLang);
+
+        const response = await fetch(urls.url('oma-opintopolku.content', notificationLocation));
 
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }
 
-        const json = await response.json();
-        setHairiotiedotteet(json)
+        const notifications = await response.json();
+
+        const envDefaultLanguage = userLang === EN_LANGUAGE ? EN_LANGUAGE : DEFAULT_LANGUAGE;
+
+        //return sortByOrderNumber(
+        return notifications.filter(n => n.whereShown.includes(SERVICE));
       } catch (error) {
         console.error(error.message);
+        return [];
       }
     }
 
-    fetchHairiotiedotteet()
-  }, [])
+    const tiedotteet = await fetchHairiotiedotteet();
+    setNotifications(tiedotteet);
+  }, [userLang])
 
-  return hairiotiedotteet
+  return notifications;
 }

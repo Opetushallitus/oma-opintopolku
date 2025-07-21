@@ -5,6 +5,7 @@ import './main.css';
 import './i18n';
 import Home from './components/home/Home';
 import { getUser, login, logout } from './utils';
+import {configureUrls} from "./urls";
 
 window.Service = {
   login,
@@ -14,5 +15,4 @@ window.Service = {
 
 const domNode = document.getElementById('content');
 const content = createRoot(domNode);
-
-content.render(<Home ref={(home) => {window.home = home}} />);
+configureUrls().then(r => content.render(<Home ref={(home) => {window.home = home}} />));
