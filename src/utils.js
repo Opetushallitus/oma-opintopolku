@@ -125,7 +125,6 @@ export const EN_LANGUAGE = 'en';
 
 export function getOrderNumber(notification, numberOfNotifications) {
   const orderNumber = Number(notification?.order);
-  console.log('orderNumber', orderNumber);
   return orderNumber === undefined || Number.isNaN(orderNumber)
     ? Number.MAX_VALUE
     : orderNumber;
