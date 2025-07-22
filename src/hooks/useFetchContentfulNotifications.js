@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {DEFAULT_LANGUAGE, EN_LANGUAGE, getLang, sortByOrderNumber} from '../utils';
+import { getLang, sortByOrderNumber} from '../utils';
 import { urls } from 'oph-urls-js';
 
 const SERVICE = 'Oma Opintopolku';
@@ -28,10 +28,7 @@ export function useFetchContentfulNotifications() {
 
         const notifications = await response.json();
 
-        const envDefaultLanguage = userLang === EN_LANGUAGE ? EN_LANGUAGE : DEFAULT_LANGUAGE;
-
-        //return sortByOrderNumber(
-        return notifications.filter(n => n.whereShown.includes(SERVICE));
+        return sortByOrderNumber(notifications.filter(n => n.whereShown.includes(SERVICE)));
       } catch (error) {
         console.error(error.message);
         return [];

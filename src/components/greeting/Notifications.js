@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { Alert, Stack } from '@mui/material';
 import { useFetchContentfulNotifications } from '../../hooks/useFetchContentfulNotifications';
 import Markdown from 'markdown-to-jsx';
