@@ -16,5 +16,6 @@ public class UrlConfiguration extends OphProperties {
         addOverride("host-oppija-base-url-fi", environment.getRequiredProperty("host.host-oppija-base-url-fi"));
         addOverride("host-oppija-base-url-en", environment.getRequiredProperty("host.host-oppija-base-url-en"));
         addOverride("host-oppija-base-url-sv", environment.getRequiredProperty("host.host-oppija-base-url-sv"));
+        frontProperties.setProperty("oma-opintopolku.content", environment.getRequiredProperty("bucket.url"));
     }
 }
