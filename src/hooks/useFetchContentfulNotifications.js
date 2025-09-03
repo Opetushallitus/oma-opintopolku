@@ -1,11 +1,13 @@
-import {useEffect, useState} from 'react';
-import { getLang, sortByOrderNumber} from '../utils';
+import { useEffect, useState } from 'react';
+import { getLang, sortByOrderNumber } from '../utils';
 import { urls } from 'oph-urls-js';
 
 const SERVICE = 'Oma Opintopolku';
 
 async function getNotificationLocation(lang) {
-  const manifest = await fetch(urls.url('oma-opintopolku.content', 'manifest.json'));
+  const manifest = await fetch(
+    urls.url('oma-opintopolku.content', 'manifest.json'),
+  );
   const data = await manifest.json();
   return data.hairiotiedote[lang.toLowerCase()];
 }
@@ -15,12 +17,14 @@ export function useFetchContentfulNotifications() {
 
   const [notifications, setNotifications] = useState([]);
 
-  useEffect(async () => {
+  useEffect(() => {
     async function fetchHairiotiedotteet() {
       try {
         const notificationLocation = await getNotificationLocation(userLang);
 
-        const response = await fetch(urls.url('oma-opintopolku.content', notificationLocation));
+        const response = await fetch(
+          urls.url('oma-opintopolku.content', notificationLocation),
+        );
 
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
@@ -28,16 +32,18 @@ export function useFetchContentfulNotifications() {
 
         const notifications = await response.json();
 
-        return sortByOrderNumber(notifications.filter(n => n.whereShown.includes(SERVICE)));
+        setNotifications(
+          sortByOrderNumber(
+            notifications.filter((n) => n.whereShown.includes(SERVICE)),
+          ),
+        );
       } catch (error) {
         console.error(error.message);
-        return [];
+        setNotifications([]);
       }
     }
-
-    const tiedotteet = await fetchHairiotiedotteet();
-    setNotifications(tiedotteet);
-  }, [userLang])
+    fetchHairiotiedotteet();
+  }, [userLang]);
 
   return notifications;
 }
