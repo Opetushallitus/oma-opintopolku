@@ -64,6 +64,19 @@
     "linkLoggedOut": "Proceed to eHOKS service",
     "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
   },
+  "yki": {
+    "title": "National Certificates of Language Proficiency (YKI)",
+    "subtitle": "View and edit your registrations for YKI tests.",
+    "icon": "Maapalloa esittävä ikoni",
+    "label": "On the My registrations page:",
+    "item1": "you can view your own registrations for the last 12 months",
+    "item2": "you can reschedule your registration only once",
+    "item3": "you can cancel your registration",
+    "item4": "you can view the tests for which you are on the waiting list and accept a place in a test from the waiting list",
+    "link": "Proceed to My YKI registrations",
+    "linkLoggedOut": "Proceed to My YKI registrations (requires identification)",
+    "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
+  },
   "tietojenikaytto": {
     "title": "How is my data used?"
   }

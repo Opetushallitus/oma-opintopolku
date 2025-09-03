@@ -64,6 +64,19 @@
     "linkLoggedOut": "Fortsätt till ePUK-tjänsten",
     "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
   },
+  "yki": {
+    "title": "Allmänna språkexamina (YKI)",
+    "subtitle": "Se och ändra dina anmälningar till YKI-testet.",
+    "icon": "Maapalloa esittävä ikoni",
+    "label": "På sidan Mina anmälningar:",
+    "item1": "kan du se dina anmälningar från de senaste 12 månaderna",
+    "item2": "kan du flytta din anmälan en gång",
+    "item3": "kan du annullera din anmälan",
+    "item4": "kan du se de examina som du köar för och ta emot en plats som du köat till",
+    "link": "Fortsätt till mina YKI-anmälningar",
+    "linkLoggedOut": "Fortsätt till mina YKI-anmälningar (kräver identifiering)",
+    "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
+  },
   "tietojenikaytto": {
     "title": "Hur används mina uppgifter?"
   }
