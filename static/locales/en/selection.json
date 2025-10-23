@@ -73,6 +73,7 @@
     "item2": "you can reschedule your registration only once",
     "item3": "you can cancel your registration",
     "item4": "you can view the tests for which you are on the waiting list and accept a place in a test from the waiting list",
+    "item5": "you can edit your contact information",
     "link": "Proceed to My YKI registrations",
     "linkLoggedOut": "Proceed to My YKI registrations (requires identification)",
     "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."

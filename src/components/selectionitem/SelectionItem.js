@@ -31,6 +31,7 @@ const SelectionItem = ({isLoggedIn, disableForValtuudet, namespace, icon, link})
             <li dangerouslySetInnerHTML={{__html: t(namespace + '.item2')}} />
             <li dangerouslySetInnerHTML={{__html: t(namespace + '.item3')}} />
             { tExists(t, namespace + '.item4') && <li dangerouslySetInnerHTML={{__html: t(namespace + '.item4')}}/> }
+            { tExists(t, namespace + '.item5') && <li dangerouslySetInnerHTML={{__html: t(namespace + '.item5')}}/> }
           </ul>
         </div>
       </div>
