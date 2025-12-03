@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Oppijan henkilökohtaiset verkkosivut",
   "private": true,
+  "packageManager": "pnpm@9.15.5",
   "scripts": {
     "dev": "webpack-dev-server --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "pnpm run dev",
     "build": "node build/build.js",
     "test:watch": "jest --watchAll",
     "test": "jest"
@@ -76,8 +77,8 @@
     "write-file-webpack-plugin": "^4.5.1"
   },
   "engines": {
-    "node": ">= 20.10.0",
-    "npm": ">= 10"
+    "node": ">= 22.0.0",
+    "pnpm": ">=9.15.5"
   },
   "browserslist": [
     "> 1%",
