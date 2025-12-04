@@ -15,11 +15,19 @@ const versionRequirements = [
   }
 ]
 
-if (shell.which('npm')) {
+if (packageConfig.engines && packageConfig.engines.npm && shell.which('npm')) {
   versionRequirements.push({
     name: 'npm',
     currentVersion: exec('npm --version'),
     versionRequirement: packageConfig.engines.npm
+  })
+}
+
+if (packageConfig.engines && packageConfig.engines.pnpm && shell.which('pnpm')) {
+  versionRequirements.push({
+    name: 'pnpm',
+    currentVersion: exec('pnpm --version'),
+    versionRequirement: packageConfig.engines.pnpm
   })
 }
 
