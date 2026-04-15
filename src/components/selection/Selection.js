@@ -6,14 +6,14 @@ import koskiImg from 'Static/img/opintoni_white.svg';
 import valpasImg from 'Static/img/opintoni_white.svg';
 import vardaImg from 'Static/img/opintoni_white.svg';
 import ykiImg from 'Static/img/opintoni_white.svg';
-import omatsivutImg from 'Static/img/hakemukseni_white.svg';
+import hakemukseniImg from 'Static/img/hakemukseni_white.svg';
 import tietojenikayttoImg from 'Static/img/tietojenikaytto.svg';
 import { createYkiAsiakasportaaliLink } from '../../utils';
 
 const Selection = ({isLoggedIn, usingValtuudet}) => (
   <React.Fragment>
     <div className={styles['flex-container']}>
-      <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='omatsivut' icon={omatsivutImg} link='/omatsivut' />
+      <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='hakemukseni' icon={hakemukseniImg} link='/oma-opiskelijavalinta' />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='koski' icon={koskiImg} link='/koski/omattiedot' />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='yki' icon={ykiImg} link={createYkiAsiakasportaaliLink()} />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={false} namespace='varda' icon={vardaImg} link='/varda' />
