@@ -36,6 +36,18 @@
     "linkLoggedOut": "Gå till Valpas-tjänsten (kräver identifiering)",
     "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
   },
+  "viestini": {
+    "title": "Mina meddelanden",
+    "subtitle": "Läs dina mottagna meddelanden i Min Studieinfo.",
+    "icon": "Kirjekuorta esittävä ikoni",
+    "label": "På sidan kan du:",
+    "item1": "läsa nya meddelanden från Min Studieinfo",
+    "item2": "granska tidigare meddelanden som du har fått",
+    "item3": "<a href=\"https://opintopolku.fi/konfo/sv/sivu/min-studieinfo#mina-meddelanden\">Läs mer om i vilka ärenden Min Studieinfo skickar Suomi.fi-meddelanden.</a>",
+    "link": "Gå till Mina meddelanden -tjänsten",
+    "linkLoggedOut": "Gå till Mina meddelanden -tjänsten (kräver identifiering)",
+    "linkUsingValtuudet": "Du kan fortsätta till den här tjänsten när du har loggat ut från den aktuella sessionen med fullmakter."
+  },
   "varda": {
     "title": "Informationsresursen inom småbarnspedagogiken Varda",
     "subtitle": "Granska uppgifter som sparats i den nationella informationsresursen inom småbarnspedagogiken.",

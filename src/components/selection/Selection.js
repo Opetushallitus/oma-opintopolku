@@ -7,6 +7,7 @@ import valpasImg from 'Static/img/opintoni_white.svg';
 import vardaImg from 'Static/img/opintoni_white.svg';
 import ykiImg from 'Static/img/opintoni_white.svg';
 import hakemukseniImg from 'Static/img/hakemukseni_white.svg';
+import viestiniImg from 'Static/img/hakemukseni_white.svg';
 import tietojenikayttoImg from 'Static/img/tietojenikaytto.svg';
 import { createYkiAsiakasportaaliLink } from '../../utils';
 
@@ -19,6 +20,7 @@ const Selection = ({isLoggedIn, usingValtuudet}) => (
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={false} namespace='varda' icon={vardaImg} link='/varda' />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='ehoks' icon={koskiImg} link='/ehoks' />
       <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='valpas' icon={valpasImg} link='/valpas' />
+      <SelectionItem isLoggedIn={isLoggedIn} disableForValtuudet={usingValtuudet} namespace='viestini' icon={viestiniImg} link='/omat-viestit/' />
     </div>
     <div className={styles['bottom-container']}>
       {!usingValtuudet
