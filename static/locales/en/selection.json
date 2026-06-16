@@ -36,6 +36,18 @@
     "linkLoggedOut": "Proceed to the Valpas service (requires identification)",
     "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
   },
+  "viestini": {
+    "title": "My messages",
+    "subtitle": "Read your messages in My Studyinfo",
+    "icon": "Kirjekuorta esittävä ikoni",
+    "label": "On this page, you can:",
+    "item1": "read new messages from My Studyinfo",
+    "item2": "review your previous messages",
+    "item3": "<a href=\"https://opintopolku.fi/konfo/en/sivu/my-studyinfo#my-messages\">Learn more about when My Studyinfo sends Suomi.fi messages</a>",
+    "link": "Proceed to the My messages service",
+    "linkLoggedOut": "Proceed to the My messages service (requires identification)",
+    "linkUsingValtuudet": "You can proceed to this service after you have logged out of the current e-Authorizations session."
+  },
   "varda": {
     "title": "The national data warehouse for early childhood education and care Varda (Only available in Finnish/Swedish)",
     "subtitle": "View information stored in Varda, the national data warehouse on early childhood education and care.",

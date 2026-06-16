@@ -36,6 +36,18 @@
     "linkLoggedOut": "Siirry Valpas-palveluun (vaatii tunnistautumisen)",
     "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
   },
+  "viestini": {
+    "title": "Viestini",
+    "subtitle": "Lue saapuneet viestisi Oma Opintopolusta.",
+    "icon": "Kirjekuorta esittävä ikoni",
+    "label": "Sivulla voit:",
+    "item1": "lukea sinulle Oma Opintopolusta saapuneet uudet viestit",
+    "item2": "tarkastella aiemmin sinulle saapuneita viestejä",
+    "item3": "<a href=\"https://opintopolku.fi/konfo/fi/sivu/oma-opintopolku#viestini\">Lue lisää siitä, mistä asioista Oma Opintopolku lähettää Suomi.fi-viestejä</a>",
+    "link": "Siirry Viestini-palveluun",
+    "linkLoggedOut": "Siirry Viestini-palveluun (vaatii tunnistautumisen)",
+    "linkUsingValtuudet": "Voit siirtyä palveluun kirjauduttuasi ulos valtuuksia käyttävästä palvelusta."
+  },
   "varda": {
     "title": "Varhaiskasvatuksen tietovaranto Varda",
     "subtitle": "Katsele kansalliseen varhaiskasvatuksen tietovarantoon tallennettuja tietoja.",
