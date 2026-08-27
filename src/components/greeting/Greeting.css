@@ -2,9 +2,14 @@
   :local(.greeting-container) {
     margin-left: 15px;
   }
+
+  :local(.guest-header) {
+    text-align: center;
+  }
 }
 
-:local(.heading) {}
+:local(.heading) {
+}
 
 :local(.greeting-container) {
   display: flex;
@@ -22,10 +27,11 @@
 }
 
 :local(.guest-greeting) {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  width: 70%;
-  margin: 1.67em auto 0.67em auto;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 :local(.subtitle) {
@@ -54,4 +60,3 @@
   font-size: 16px;
   margin-top: 0px;
 }
-
