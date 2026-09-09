@@ -103,6 +103,11 @@
   text-decoration: none;
 }
 
+:local(.link:focus-visible) {
+  outline: 3px solid #3A7A10;
+  outline-offset: 2px;
+}
+
 :local(.link-disabled) {
   display: flex;
   background-color: #b2b2b2;
