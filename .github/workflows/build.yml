@@ -60,7 +60,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: mvn clean install -B -Dbranch=${GITHUB_REF_NAME} -Drevision=${GITHUB_SHA} -DbuildNumber=${GITHUB_RUN_NUMBER}
+        run: mvn clean install -B -Dbranch=${GITHUB_REF_NAME} -Drevision=${GITHUB_SHA} -DbuildNumber=${GITHUB_RUN_NUMBER} --settings settings.xml
 
       - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         id: restore-build
