@@ -16,7 +16,7 @@ import org.springframework.security.cas.ServiceProperties;
 import org.springframework.security.cas.authentication.CasAuthenticationProvider;
 import org.springframework.security.cas.web.CasAuthenticationFilter;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -27,7 +27,7 @@ import org.springframework.web.filter.CorsFilter;
 import java.util.Arrays;
 
 @Configuration
-@EnableGlobalMethodSecurity(jsr250Enabled = false, prePostEnabled = true, securedEnabled = true)
+@EnableMethodSecurity(jsr250Enabled = false, prePostEnabled = true, securedEnabled = true)
 @EnableWebSecurity
 public class SecurityConfiguration {
     private CasOppijaProperties casOppijaProperties;
@@ -116,11 +116,10 @@ public class SecurityConfiguration {
             .addFilter(corsFilter())
             .cors(cors -> cors.disable())
             .csrf(csrf -> csrf.disable())
-            .authorizeRequests()
-            .requestMatchers("/authenticate").authenticated()
-            .requestMatchers("/session").authenticated()
-            .anyRequest().permitAll()
-            .and()
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/authenticate").authenticated()
+                .requestMatchers("/session").authenticated()
+                .anyRequest().permitAll())
             .addFilter(casAuthenticationFilter)
             .exceptionHandling(eh -> eh.authenticationEntryPoint(omaOpintopolkuCasAuthenticationEntryPoint()))
             //.and()
