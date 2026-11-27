@@ -40,7 +40,7 @@ public class OmaopintopolkuCasAuthenticationEntryPoint extends CasAuthentication
         String host = uri.getHost();
 
         String initialUrl = super.getServiceProperties().getService();
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(initialUrl);
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(initialUrl);
         return builder.host(host).toUriString();
     }
 

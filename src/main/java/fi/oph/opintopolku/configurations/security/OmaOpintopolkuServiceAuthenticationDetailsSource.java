@@ -5,7 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.cas.ServiceProperties;
-import org.springframework.security.cas.web.authentication.ServiceAuthenticationDetails;
+import org.springframework.security.cas.authentication.ServiceAuthenticationDetails;
 import org.springframework.security.cas.web.authentication.ServiceAuthenticationDetailsSource;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 
@@ -21,7 +21,11 @@ public class OmaOpintopolkuServiceAuthenticationDetailsSource extends ServiceAut
         return new OmaOpintopolkuServiceAuthenticationDetailsSource.OmaOpintopolkuAuthenticationDetails(request);
     }
 
-    public static class OmaOpintopolkuAuthenticationDetails extends WebAuthenticationDetails implements ServiceAuthenticationDetails{
+    public static class OmaOpintopolkuAuthenticationDetails extends WebAuthenticationDetails implements ServiceAuthenticationDetails {
+        // Luokka serialisoidaan sessioon (spring_session_attributes). Arvo on sama kuin ennen
+        // Spring Security 7 -päivitystä laskettu oletusarvo, jotta vanhat sessiot latautuvat edelleen.
+        private static final long serialVersionUID = 5775572034764140464L;
+
         private final String serviceUrl;
 
         public OmaOpintopolkuAuthenticationDetails(HttpServletRequest request) {

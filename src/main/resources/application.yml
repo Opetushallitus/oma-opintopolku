@@ -5,6 +5,11 @@ server:
       cookie:
         name: JSESSIONID
   port: 8080
+  # Spring Boot 4 tunnistaa AWS ECS:n ja ottaa siellä oletuksena käyttöön X-Forwarded-*-headerien
+  # käsittelyn (RemoteIpValve). Sisäinen proxy lähettää X-Forwarded-Proto: http, jolloin
+  # request.getRequestURL() palauttaisi http-osoitteen ja CAS-tiketin validointi epäonnistuisi.
+  # Skeema asetetaan oma-opintopolku.uses-ssl-proxy-asetuksella (ServletContainerConfiguration).
+  forward-headers-strategy: none
 spring:
   session:
     store-type: jdbc
